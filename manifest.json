@@ -1,0 +1,27 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "name": "Self Portrait Project",
+  "short_name": "SPP",
+  "icons": [{
+      "src": "/path/to/icon-64x64.webp",
+      "sizes": "64x64",
+      "type": "image/webp"
+    }, {
+      "src": "/path/to/icon-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }, {
+      "src": "/path/to/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ],
+  "scope": "/",
+  "id": "self-portrait-project",
+  "start_url": "/start.html",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "theme_color": "#f0f0f0",  // Light gray
+  "background_color": "#ffffff"  // White
+}
