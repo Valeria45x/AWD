@@ -5,19 +5,32 @@
   box-sizing: border-box;
 }
 
+/* Variables */
+:root {
+  --primary-color: #e63946;  /* Color rojo */
+  --secondary-color: #ff3333; /* Otro tono de rojo */
+  --navbar-footer-color: #000000; /* Color negro para la navbar y footer */
+  --text-color: #ffffff; /* Color blanco para el texto */
+  --background-color: #ffffff; /* Color blanco para el fondo */
+}
+
+/* Body Styles */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  background-color: var(--background-color);
 }
 
 /* Navbar Styles */
 .navbar {
-  background-color: #000000;
-  color: #fff;
+  background-color: var(--navbar-footer-color);
+  color: var(--text-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
+  position: relative; /* Asegura que el navbar tenga un contexto de posición para el toggle */
+  z-index: 1000; /* Asegura que el navbar esté siempre encima de otros elementos */
 }
 
 .navbar-links {
@@ -30,8 +43,13 @@ body {
 }
 
 .navbar-links a {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
+  transition: color 0.3s ease; /* Agregar transición */
+}
+
+.navbar-links a:hover {
+  color: var(--primary-color); /* Cambiar color al pasar el mouse */
 }
 
 .navbar-toggle {
@@ -43,13 +61,13 @@ body {
 .bar {
   height: 3px;
   width: 25px;
-  background-color: white;
+  background-color: var(--text-color);
   margin: 3px 0;
 }
 
 /* Hero Section */
 .hero {
-  background: url(assets\icons\oni.svg) no-repeat center center/cover;
+  background: url(assets/icons/oni.svg) no-repeat center center/cover;
   color: rgb(0, 0, 0);
   text-align: center;
   padding: 100px 20px;
@@ -64,12 +82,18 @@ body {
   font-size: 1.2em;
 }
 
+/* Button Styles */
 .btn {
-  background-color: #e63946;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
+  transition: background-color 0.3s ease; /* Agregar transición */
+}
+
+.btn:hover {
+  background-color: var(--secondary-color); /* Cambiar color al pasar el mouse */
 }
 
 /* Grid Layout */
@@ -81,7 +105,7 @@ body {
 }
 
 .grid-item {
-  background-color: #ff3333;
+  background-color: var(--secondary-color);
   padding: 20px;
   border: 1px solid #ffffff;
   border-radius: 5px;
@@ -92,8 +116,8 @@ body {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #000000;
-  color: white;
+  background-color: var(--navbar-footer-color);
+  color: var(--text-color);
 }
 
 /* Responsive Styles */
@@ -102,7 +126,7 @@ footer {
       display: none;
       flex-direction: column;
       width: 100%;
-      background-color: #ffffff;
+      background-color: var(--background-color);
       position: absolute;
       top: 60px;
       left: 0;
@@ -110,64 +134,47 @@ footer {
 
   .navbar-links.active {
       display: flex;
+      padding: 10px;
   }
 
   .navbar-toggle {
       display: flex;
   }
 }
-/*
-  MEDIA QUERIES
-  https://alistapart.com/article/responsive-web-design/
-  https://www.w3.org/TR/mediaqueries-3/
-*/
 
-  /* Mobile Portrait */
-  @media only screen and (max-width: 600px) and (orientation: portrait) {
-    body {
+/* Media Queries for Different Screen Sizes */
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+  body {
       font-size: 1rem;
-      background-color: #ffffff;
-      
-    }
   }
-  
-  /* Mobile Landscape */
-  @media only screen and (max-width: 800px) and (orientation: landscape) {
-    body {
+}
+
+@media only screen and (max-width: 800px) and (orientation: landscape) {
+  body {
       font-size: 1.2rem;
-      background-color: #ffffff;
-    }
   }
-  
-  /* Tablet Portrait */
-  @media only screen and (min-width: 601px) and (max-width: 900px) and (orientation: portrait) {
-    body {
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) and (orientation: portrait) {
+  body {
       font-size: 1.4rem;
-      background-color: #ffffff;
-    }
   }
-  
-  /* Tablet Landscape */
-  @media only screen and (min-width: 801px) and (max-width: 1200px) and (orientation: landscape) {
-    body {
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1200px) and (orientation: landscape) {
+  body {
       font-size: 1.6rem;
-      background-color: #ffffff;
-    }
   }
-  
-  /* Small Desktop */
-  @media only screen and (min-width: 1201px) and (max-width: 1600px) {
-    body {
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1600px) {
+  body {
       font-size: 1.8rem;
-      background-color: #ffffff;
-    }
   }
-  
-  /* Large Desktop */
-  @media only screen and (min-width: 1601px) {
-    body {
+}
+
+@media only screen and (min-width: 1601px) {
+  body {
       font-size: 2rem;
-      background-color: #ffffff;
-    }
   }
-  
+}
