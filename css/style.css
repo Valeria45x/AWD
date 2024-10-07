@@ -8,7 +8,7 @@
 /* Variables */
 :root {
   --primary-color: #e63946;  /* Color rojo */
-  --secondary-color: #ff3333; /* Otro tono de rojo */
+  --secondary-color: #4b4b4b; /* Color gris */
   --navbar-footer-color: #000000; /* Color negro para la navbar y footer */
   --text-color: #ffffff; /* Color blanco para el texto */
   --background-color: #ffffff; /* Color blanco para el fondo */
@@ -76,7 +76,11 @@ body {
 .hero h1 {
   font-size: 3em;
   margin-bottom: 20px;
+  font-size: 5vw; /* Ajusta el valor según el tamaño que te funcione */
+  white-space: nowrap; /* Evita que el texto salte a la siguiente línea */
+  overflow: hidden; /* Evita que el texto se desborde */
 }
+
 
 .hero p {
   font-size: 1.2em;
@@ -84,7 +88,7 @@ body {
 
 /* Button Styles */
 .btn {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: var(--text-color);
   padding: 10px 20px;
   text-decoration: none;
@@ -93,7 +97,7 @@ body {
 }
 
 .btn:hover {
-  background-color: var(--secondary-color); /* Cambiar color al pasar el mouse */
+  background-color: var(--primary-color); /* Cambiar color al pasar el mouse */
 }
 
 /* Grid Layout */
@@ -110,7 +114,16 @@ body {
   border: 1px solid #ffffff;
   border-radius: 5px;
   text-align: center;
+  transition: background-color 0.3s, transform 0.3s; /* Transición suave */
 }
+
+/* Efecto hover para los items del grid */
+.grid-item:hover {
+  background-color: var(--primary-color); /* Cambia a un color de fondo diferente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+}
+
 
 /* Footer Styles */
 footer {
