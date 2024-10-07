@@ -49,14 +49,4 @@
 .navbar-toggle {
     display: flex;
 }
-}
-@media (max-width: 768px) {
-    .navbar-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--background-color);
-        position: absolute;
-        top: 60px;
-        left: 0;
-    }
+
