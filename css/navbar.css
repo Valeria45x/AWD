@@ -6,7 +6,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  position: relative; /* Asegura que el navbar tenga un contexto de posición para el toggle */
+  position: fixed; /* Cambiar a fixed para que el navbar permanezca en la parte superior */
+  top: 0; /* Asegúrate de que esté en la parte superior */
+  left: 0; /* Alinea a la izquierda */
+  right: 0; /* Alinea a la derecha */
   z-index: 1000; /* Asegura que el navbar esté siempre encima de otros elementos */
 }
 
@@ -51,7 +54,7 @@
       width: 100%;
       background-color: var(--navbar-footer-color);
       position: absolute;
-      top: 60px;
+      top: 60px; /* Ajusta esta posición si es necesario */
       left: 0;
       padding: 10px;
   }
