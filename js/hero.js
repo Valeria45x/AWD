@@ -4,10 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     svgElement.addEventListener('mouseover', () => {
         pathElement.setAttribute('fill', 'var(--primary-color)'); // Cambia al color primario
-        console.log('Mouse over SVG'); // Para verificar que el evento se dispara
+        
+        // Animación de escalado
+        svgElement.style.transform = 'scale(1.1)'; // Escala al pasar el mouse
+        svgElement.style.transition = 'transform 0.3s ease'; // Añade la transición
     });
 
     svgElement.addEventListener('mouseout', () => {
         pathElement.setAttribute('fill', '#000000'); // Cambia de vuelta al color por defecto
+        
+        // Vuelve al tamaño original
+        svgElement.style.transform = 'scale(1)'; // Regresa a la escala normal
+        svgElement.style.transition = 'transform 0.3s ease'; // Añade la transición
     });
 });
