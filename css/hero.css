@@ -24,11 +24,3 @@
   cursor: pointer;
 }
 
-.hero-svg svg {
-  transition: fill 0.3s ease; /* Transición suave al cambiar de color */
-  fill: var(--navbar-footer-color); /* Color inicial del SVG */
-}
-
-.hero-svg:hover svg {
-  fill: var(--primary-color); /* Cambia el color a rojo al pasar el mouse */
-}
