@@ -1,0 +1,20 @@
+/* Hero Section */
+.hero {
+    background: url(assets/icons/oni.svg) no-repeat center center/cover;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-size: 5vw; /* Ajusta el valor según el tamaño que te funcione */
+    white-space: nowrap; /* Evita que el texto salte a la siguiente línea */
+    overflow: hidden; /* Evita que el texto se desborde */
+  }
+  
+  
+  .hero p {
+    font-size: 1.2em;
+  }

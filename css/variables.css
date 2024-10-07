@@ -1,0 +1,8 @@
+/* Variables */
+:root {
+    --primary-color: hsla(355, 75%, 58%, 1);  /* Color rojo #e63946 */
+    --secondary-color: hsla(0, 0%, 29%, 1);   /* Color gris #4b4b4b */
+    --navbar-footer-color: hsla(0, 0%, 0%, 1); /* Color negro #000000 */
+    --text-color: hsla(0, 0%, 100%, 1);      /* Color blanco #ffffff */
+    --background-color: hsla(0, 0%, 100%, 1); /* Color blanco #ffffff */
+  }

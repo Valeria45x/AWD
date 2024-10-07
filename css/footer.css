@@ -1,0 +1,7 @@
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--navbar-footer-color);
+    color: var(--text-color);
+  }
