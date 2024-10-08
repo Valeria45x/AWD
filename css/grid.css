@@ -9,11 +9,12 @@
   .grid-item {
     background-color: var(--secondary-color);
     padding: 20px;
-    border:  none
-    border-radius: 5px;
+    border: none; /* Asegúrate de cerrar con un punto y coma */
+    border-radius: 5px; /* Los dos puntos (:) antes del valor */
     text-align: center;
     transition: background-color 0.3s, transform 0.3s; /* Transición suave */
-  }
+}
+
   
   /* Efecto hover para los items del grid */
   .grid-item:hover {
