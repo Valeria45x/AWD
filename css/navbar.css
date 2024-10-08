@@ -1,4 +1,11 @@
-/* Estilos generales del navbar */
+/* Ocultar el checkbox visualmente */
+.navbar-checkbox {
+  position: absolute;
+  opacity: 0;
+  left: -9999px; /* Mueve fuera del área visible */
+}
+
+/* Resto del CSS */
 .navbar {
   background-color: var(--navbar-footer-color);
   color: var(--text-color);
@@ -32,7 +39,6 @@
   color: var(--primary-color);
 }
 
-/* Ocultar el menú hamburguesa en pantallas grandes */
 .navbar-toggle {
   display: none;
   flex-direction: column;
@@ -46,48 +52,43 @@
   margin: 3px 0;
 }
 
-/* Mostrar el menú hamburguesa solo en pantallas pequeñas */
 @media (max-width: 768px) {
   .navbar-links {
-      display: none; /* Ocultar enlaces por defecto */
-      flex-direction: column;
-      width: 100%;
-      background-color: var(--navbar-footer-color);
-      position: absolute;
-      top: 60px;
-      left: 0;
-      padding: 10px;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--navbar-footer-color);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px;
   }
 
-  .navbar-checkbox {
-      display: none; /* Ocultar el checkbox */
+  .navbar-links.active {
+    display: flex;
   }
 
-  /* Mostrar el menú hamburguesa */
   .navbar-toggle {
-      display: flex;
+    display: flex;
   }
 
-  /* Usar el checkbox para controlar si se muestra o no el menú */
   .navbar-checkbox:checked ~ .navbar-links {
-      display: flex;
+    display: flex;
   }
 
-  /* Animaciones opcionales para el menú hamburguesa */
   .navbar-checkbox:checked ~ .navbar-toggle .bar:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(5px, 5px);
   }
 
   .navbar-checkbox:checked ~ .navbar-toggle .bar:nth-child(2) {
-      opacity: 0; /* Ocultar la barra del medio */
+    opacity: 0;
   }
 
   .navbar-checkbox:checked ~ .navbar-toggle .bar:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(5px, -5px);
   }
 
-  /* Transición suave de las barras del menú */
   .navbar-toggle .bar {
-      transition: 0.3s ease;
+    transition: 0.3s ease;
   }
 }
