@@ -14,15 +14,3 @@
     --background-color: #121212;
 }
 
-/* Modo oscuro para el título */
-.dark-mode h1 {
-    color: white; /* Cambia a blanco en modo oscuro */
-  }
-  /* Modo oscuro para SVG */
-
-  .dark-mode .hero-svg svg path {
-    fill: white !important; /* Forzar el cambio a blanco en modo oscuro */
-  }
-  .dark-mode .hero-svg svg:hover path {
-    fill: var(--primary-color) !important; /* Color rojo definido en tu variable */
-  }

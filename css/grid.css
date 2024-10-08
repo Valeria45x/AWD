@@ -21,3 +21,8 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
     transform: scale(1.05); /* Aumentar ligeramente el tamaño */
   }
+
+  .dark-mode .grid-item {
+    border: none; /* Eliminar el borde */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Ajusta la sombra si lo deseas */
+}
