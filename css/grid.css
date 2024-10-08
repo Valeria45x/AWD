@@ -9,7 +9,7 @@
   .grid-item {
     background-color: var(--secondary-color);
     padding: 20px;
-    border: 1px solid #ffffff;
+    border:  none
     border-radius: 5px;
     text-align: center;
     transition: background-color 0.3s, transform 0.3s; /* Transición suave */
