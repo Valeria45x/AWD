@@ -4,5 +4,6 @@
     --secondary-color: hsla(0, 0%, 29%, 1);   /* Color gris #4b4b4b */
     --navbar-footer-color: hsla(0, 0%, 0%, 1); /* Color negro #000000 */
     --text-color: hsla(0, 0%, 100%, 1);      /* Color blanco #ffffff */
-    --background-color: #dcdcdc; /* Color blanco #ffffff */
+    --background-color: #dcdcdc; 
   }
+  

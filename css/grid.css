@@ -9,21 +9,21 @@
   .grid-item {
     background-color: var(--secondary-color);
     padding: 20px;
-    border: none; /* Asegúrate de cerrar con un punto y coma */
-    border-radius: 5px; /* Los dos puntos (:) antes del valor */
+    border: none; 
+    border-radius: 5px; 
     text-align: center;
-    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+    transition: background-color 0.3s, transform 0.3s; 
 }
 
   
   /* Efecto hover para los items del grid */
   .grid-item:hover {
-    background-color: var(--primary-color); /* Cambia a un color de fondo diferente */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+    background-color: var(--primary-color); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.05); 
   }
 
   .dark-mode .grid-item {
-    border: none; /* Eliminar el borde */
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Ajusta la sombra si lo deseas */
+    border: none; 
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); 
 }

@@ -2,7 +2,7 @@
 .navbar-checkbox {
   position: absolute;
   opacity: 0;
-  left: -9999px; /* Mueve fuera del área visible */
+  left: -9999px;
 }
 
 /* Resto del CSS */

@@ -9,9 +9,9 @@
 .hero h1 {
   font-size: 3em;
   margin-bottom: 20px;
-  font-size: 5vw; /* Ajusta el valor según el tamaño que te funcione */
-  white-space: nowrap; /* Evita que el texto salte a la siguiente línea */
-  overflow: hidden; /* Evita que el texto se desborde */
+  font-size: 5vw; 
+  white-space: nowrap; 
+  overflow: hidden; 
 }
 
 .hero p {
@@ -19,14 +19,14 @@
 }
 
 .hero-svg {
-  position: relative; /* Permite el posicionamiento dentro del contenedor */
-  display: inline-block; /* Hace que el contenedor del SVG se ajuste al contenido */
+  position: relative; 
+  display: inline-block; 
   cursor: pointer;
 }
 
 /* Modo oscuro para el título */
 .dark-mode h1 {
-  color: white; /* Cambia a blanco en modo oscuro */
+  color: white; 
 }
 /* Modo oscuro para SVG */
 
@@ -34,5 +34,5 @@
   fill: white !important; /* Forzar el cambio a blanco en modo oscuro */
 }
 .dark-mode .hero-svg svg:hover path {
-  fill: var(--primary-color) !important; /* Color rojo definido en tu variable */
+  fill: var(--primary-color) !important; 
 }
