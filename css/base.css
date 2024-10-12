@@ -5,5 +5,5 @@ body {
     background-color: var(--background-color);
   }
   .body {
-    padding-top: 60px; /* Ajusta este valor según la altura de tu navbar */
+    padding-top: 60px; 
 }
