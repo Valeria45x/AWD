@@ -1,11 +1,11 @@
-/* Ocultar el checkbox visualmente */
+/* Navbar Checkbox: Visually Hidden */
 .navbar-checkbox {
   position: absolute;
   opacity: 0;
   left: -9999px;
 }
 
-/* Resto del CSS */
+/* Navbar Container */
 .navbar {
   background-color: var(--navbar-footer-color);
   color: var(--text-color);
@@ -20,6 +20,7 @@
   z-index: 1000;
 }
 
+/* Navbar Links */
 .navbar-links {
   list-style: none;
   display: flex;
@@ -39,6 +40,7 @@
   color: var(--primary-color);
 }
 
+/* Navbar Toggle Button */
 .navbar-toggle {
   display: none;
   flex-direction: column;
@@ -52,42 +54,39 @@
   margin: 3px 0;
 }
 
-@media (max-width: 768px) {
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--navbar-footer-color);
-    position: absolute;
-    top: 60px;
-    left: 0;
-    padding: 10px;
-  }
 
+
+  /* Navbar Links: Show when active */
   .navbar-links.active {
     display: flex;
   }
 
+  /* Navbar Toggle: Visible on small screens */
   .navbar-toggle {
     display: flex;
   }
 
+  /* Navbar Checkbox: Control navbar toggle behavior */
   .navbar-checkbox:checked ~ .navbar-links {
     display: flex;
   }
 
+  /* Navbar Toggle Animation: First bar rotation */
   .navbar-checkbox:checked ~ .navbar-toggle .bar:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
 
+  /* Navbar Toggle Animation: Hide second bar */
   .navbar-checkbox:checked ~ .navbar-toggle .bar:nth-child(2) {
     opacity: 0;
   }
 
+  /* Navbar Toggle Animation: Third bar rotation */
   .navbar-checkbox:checked ~ .navbar-toggle .bar:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 
+  /* Transition for the toggle bars */
   .navbar-toggle .bar {
     transition: 0.3s ease;
   }
