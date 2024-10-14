@@ -129,3 +129,7 @@
     display: flex;
   }
 }
+.navbar-brand {
+  white-space: nowrap;
+  font-size: 16px; /* Ajusta el tamaño según lo que necesites */
+}
