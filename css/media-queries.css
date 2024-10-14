@@ -54,3 +54,37 @@
       left: 0;
   } 
 }
+/* Navbar Toggle Button visible on small screens */
+@media (max-width: 767px) {
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--navbar-footer-color);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: right;
+  }
+
+  /* Show navbar links when checkbox is checked */
+  .navbar-checkbox:checked ~ .navbar-links {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+}

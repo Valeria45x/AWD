@@ -91,3 +91,41 @@
     transition: 0.3s ease;
   }
 
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--navbar-footer-color);
+    position: absolute;
+    top: 60px; /* Ajusta según tu diseño */
+    right: 0;
+    width: 100%;
+    text-align: right;
+  }
+  
+  .navbar-checkbox:checked ~ .navbar-links {
+    display: flex;
+  }
+  /* Ocultar el toggle en pantallas grandes */
+@media (min-width: 768px) {
+  .navbar-toggle {
+    display: none;
+  }
+
+  /* Mostrar enlaces de la navbar en horizontal en pantallas grandes */
+  .navbar-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+  }
+}
+
+/* Mostrar el toggle en pantallas pequeñas */
+@media (max-width: 767px) {
+  .navbar-links {
+    display: none; /* Ocultar los enlaces por defecto */
+  }
+
+  .navbar-checkbox:checked ~ .navbar-links {
+    display: flex;
+  }
+}
