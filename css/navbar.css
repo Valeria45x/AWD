@@ -124,7 +124,7 @@
 /* Mostrar el toggle en pantallas pequeñas */
 @media (max-width: 767px) {
   .navbar-links {
-    display: none; /* Ocultar los enlaces por defecto */
+    display: none; 
   }
 
   .navbar-checkbox:checked ~ .navbar-links {
@@ -133,5 +133,8 @@
 }
 .navbar-brand {
   white-space: nowrap;
-  font-size: 16px; /* Ajusta el tamaño según lo que necesites */
+  font-size: 16px;
 }
+.theme-toggle {white-space: nowrap;
+  font-size: 16px;
+ }
