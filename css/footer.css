@@ -1,8 +1,29 @@
 /* Footer Styles */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--navbar-footer-color);
-    color: var(--text-color);
-    font-size: 16px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Alinea horizontalmente los elementos al centro */
+  position: relative; /* Para poder posicionar el ícono de GitHub de forma absoluta */
+  padding: 20px;
+  background-color: var(--navbar-footer-color);
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+/* Alinea el ícono de GitHub a la izquierda */
+footer a {
+  position: absolute;
+  left: 20px; /* Puedes ajustar este valor para mover el ícono más a la izquierda */
+  text-decoration: none;
+}
+
+/* Estilos para el ícono */
+.github-icon {
+  width: 24px; /* Ajusta el tamaño del ícono si es necesario */
+  height: auto;
+}
+
+/* Cambiar el color o estilo del ícono en hover */
+footer a:hover .github-icon {
+  opacity: 0.8;
+}
