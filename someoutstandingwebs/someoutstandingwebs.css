@@ -52,7 +52,7 @@ section:hover {
 }
 
 section h2 {
-    color: #0077b6;
+    color: #ea3d4b;
 }
 
 section p {
@@ -67,61 +67,44 @@ section p {
     margin-top: 20px;
 }
 
+.image-grid a {
+    flex: 1;
+    display: inline-block;
+    position: relative;
+}
+
 .image-grid img {
-    width: calc(33.333% - 13px); /* 3 images per row with some space in between */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 500px;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.image-grid img:hover {
-    transform: scale(1.05);
-}
-
-/* Links */
-a {
-    color: #0077b6;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #023e8a;
-}
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    background-color: #0077b6;
+/* Overlay Text */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+    opacity: 0;
 }
 
-footer p {
-    margin: 0;
+/* Image Hover Effect */
+.image-container:hover img {
+    filter: blur(5px) brightness(0.7) saturate(1.2); /* Adding blur and darkening the image */
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
-/* Responsive Typography */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5em;
-    }
-
-    h2 {
-        font-size: 1.8em;
-    }
-    
-    .image-grid {
-        flex-direction: column;
-    }
-    
-    .image-grid img {
-        width: 100%;
-    }
+.image-container:hover .overlay-text {
+    opacity: 1;
 }
 
-ul li {
-    margin-bottom: 15px; 
+
+.image-container:hover {
+
+    backdrop-filter: blur(8px);
 }
