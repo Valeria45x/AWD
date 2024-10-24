@@ -2,18 +2,22 @@
 footer {
   display: flex;
   align-items: center;
-  justify-content: center; /* Alinea horizontalmente los elementos al centro */
-  position: relative; /* Para poder posicionar el ícono de GitHub de forma absoluta */
+  justify-content: center;
+  position: fixed; /* Cambiado a 'fixed' para que siempre esté en la parte inferior */
+  bottom: 0; /* Fijado al fondo de la ventana */
+  left: 0;
+  right: 0;
   padding: 20px;
   background-color: var(--navbar-footer-color);
   color: var(--text-color);
   font-size: 16px;
+  z-index: 1000; /* Asegúrate de que se muestre sobre otros elementos */
 }
 
 /* Alinea el ícono de GitHub a la izquierda */
 footer a {
   position: absolute;
-  left: 20px; /* Puedes ajustar este valor para mover el ícono más a la izquierda */
+  left: 20px; /* Ajusta este valor para mover el ícono más a la izquierda */
   text-decoration: none;
 }
 
