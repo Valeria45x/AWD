@@ -16,7 +16,6 @@ html {
   flex-direction: column;
   height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
   overflow-y: auto; /* Permitir desplazamiento vertical */
-  scroll-snap-type: y mandatory; /* Habilitar el snap en el eje Y */
   scroll-behavior: smooth;
 }
 
@@ -32,17 +31,17 @@ section {
 }
 
 #hero {
-  background-color: #f0f0f0; /* Color de fondo para la sección hero */
+  background-color: #ffffff; /* Color de fondo para la sección hero */
 }
 
 #projects {
-  background-color: #e0e0e0; /* Color de fondo para la sección de proyectos */
+  background-color: #ffffff; /* Color de fondo para la sección de proyectos */
 }
 
 #about {
-  background-color: #d0d0d0; /* Color de fondo para la sección "About" */
+  background-color: #ffffff; /* Color de fondo para la sección "About" */
 }
 
 #contact {
-  background-color: #c0c0c0; /* Color de fondo para la sección de contacto */
+  background-color: #ffffff; /* Color de fondo para la sección de contacto */
 }
