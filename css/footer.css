@@ -3,16 +3,17 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed; /* Cambiado a 'fixed' para que siempre esté en la parte inferior */
-  bottom: 0; /* Fijado al fondo de la ventana */
+  position: fixed;
+  bottom: 0;
   left: 0;
   right: 0;
   padding: 20px;
   background-color: var(--navbar-footer-color);
   color: var(--text-color);
-  font-size: 16px;
-  z-index: 1000; /* Asegúrate de que se muestre sobre otros elementos */
+  font-size: var(--text-sm); 
+  z-index: 1000;
 }
+
 
 /* Alinea el ícono de GitHub a la izquierda */
 footer a {

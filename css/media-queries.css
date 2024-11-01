@@ -1,46 +1,45 @@
-/* Media Queries for Different Screen Sizes */
-
 /* Small screens, portrait orientation (max-width: 600px) */
 @media only screen and (max-width: 600px) and (orientation: portrait) {
   body {
-      font-size: 1rem;
+      font-size: var(--text-sm);
   }
 }
 
 /* Small screens, landscape orientation (max-width: 800px) */
 @media only screen and (max-width: 800px) and (orientation: landscape) {
   body {
-      font-size: 1.2rem;
+      font-size: var(--text-base);
   }
 }
 
 /* Medium screens, portrait orientation (601px to 900px) */
 @media only screen and (min-width: 601px) and (max-width: 900px) and (orientation: portrait) {
   body {
-      font-size: 1.4rem;
+      font-size: var(--text-lg);
   }
 }
 
 /* Medium screens, landscape orientation (801px to 1200px) */
 @media only screen and (min-width: 801px) and (max-width: 1200px) and (orientation: landscape) {
   body {
-      font-size: 1.6rem;
+      font-size: var(--text-xl);
   }
 }
 
 /* Large screens (1201px to 1600px) */
 @media only screen and (min-width: 1201px) and (max-width: 1600px) {
   body {
-      font-size: 1.8rem;
+      font-size: var(--text-2xl);
   }
 }
 
 /* Extra large screens (1601px and above) */
 @media only screen and (min-width: 1601px) {
   body {
-      font-size: 2rem;
+      font-size: var(--text-3xl);
   }
 }
+
 
 /* Navbar media query for screens up to 768px */
 @media (max-width: 768px) {

@@ -7,16 +7,16 @@
 }
 
 .hero h1 {
-  font-size: 3em;
+  font-size: var(--text-3xl);
   margin-bottom: 20px;
-  font-size: 5vw; 
-  white-space: nowrap; 
-  overflow: hidden; 
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .hero p {
-  font-size: 1.2em;
+  font-size: var(--text-lg);
 }
+
 
 .hero-svg {
   position: relative; 
