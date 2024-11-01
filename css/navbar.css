@@ -1,10 +1,3 @@
-/* Navbar Checkbox: Visually Hidden */
-.navbar-checkbox {
-  position: absolute;
-  opacity: 0;
-  left: -9999px;
-}
-
 /* Navbar Container */
 .navbar {
   background-color: var(--navbar-footer-color);
@@ -18,34 +11,40 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  font-size: var(--text-base); 
+  font-size: var(--text-base);
 }
+
 /* Navbar Links */
 .navbar-links {
   list-style: none;
   display: flex;
+  flex-direction: row; /* Siempre en fila */
 }
 
 .navbar-links li {
   margin: 0 15px;
 }
 
-
+.navbar-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: var(--text-sm);
+}
 
 .navbar-links a:hover {
   color: var(--primary-color);
 }
 
-.navbar-links a {
-  color: var(--text-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-size: var(--text-sm); /* Cambiado a variable */
+/* Navbar Brand */
+.navbar-brand {
+  white-space: nowrap;
+  font-size: 16px;
 }
 
-/* Navbar Toggle Button */
+/* Navbar Toggle Button (Hamburguesa) */
 .navbar-toggle {
-  display: none;
+  display: none; /* Ocultar por defecto */
   flex-direction: column;
   cursor: pointer;
 }
@@ -55,89 +54,57 @@
   width: 25px;
   background-color: var(--text-color);
   margin: 3px 0;
+  transition: all 0.3s ease; /* Transiciones suaves */
 }
 
+/* Ocultar el checkbox visualmente */
+.navbar-checkbox {
+  display: none; /* Ocultar el checkbox */
+}
 
-
-  /* Navbar Links: Show when active */
-  .navbar-links.active {
-    display: flex;
-  }
-
-  /* Navbar Toggle: Visible on small screens */
-  .navbar-toggle {
-    display: flex;
-  }
-
-  /* Navbar Checkbox: Control navbar toggle behavior */
-  .navbar-checkbox:checked ~ .navbar-links {
-    display: flex;
-  }
-
-  /* Navbar Toggle Animation: First bar rotation */
-  .navbar-checkbox:checked ~ .navbar-toggle .bar:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  /* Navbar Toggle Animation: Hide second bar */
-  .navbar-checkbox:checked ~ .navbar-toggle .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  /* Navbar Toggle Animation: Third bar rotation */
-  .navbar-checkbox:checked ~ .navbar-toggle .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-
-  /* Transition for the toggle bars */
-  .navbar-toggle .bar {
-    transition: 0.3s ease;
-  }
-
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    background-color: var(--navbar-footer-color);
-    position: absolute;
-    top: 60px; /* Ajusta según tu diseño */
-    right: 0;
-    width: 100%;
-    text-align: right;
-  }
-  
-  .navbar-checkbox:checked ~ .navbar-links {
-    display: flex;
-  }
-  /* Ocultar el toggle en pantallas grandes */
+/* Responsive Design */
 @media (min-width: 768px) {
-  .navbar-toggle {
-    display: none;
-  }
-
-  /* Mostrar enlaces de la navbar en horizontal en pantallas grandes */
   .navbar-links {
-    display: flex;
-    flex-direction: row;
+    display: flex; /* Mostrar enlaces en horizontal */
     position: static;
     white-space: nowrap;
-  font-size: 16px;
+  }
+
+  .navbar-toggle {
+    display: none; /* Asegurarse de que no se muestre el menú hamburguesa en pantallas grandes */
   }
 }
 
-/* Mostrar el toggle en pantallas pequeñas */
 @media (max-width: 767px) {
   .navbar-links {
-    display: none; 
+    display: none; /* Esconder enlaces en pantallas pequeñas */
+    flex-direction: column; /* Cambiar a vertical */
+    position: absolute; /* Posiciona el menú sobre el contenido */
+    top: 60px; /* Ajusta según tu diseño */
+    right: 0;
+    background-color: var(--navbar-footer-color); /* Fondo para el menú */
+    width: 100%; /* Ajustar al ancho completo */
+    z-index: 999; /* Asegurarse de que esté por encima del contenido */
   }
 
   .navbar-checkbox:checked ~ .navbar-links {
-    display: flex;
+    display: flex; /* Mostrar el menú al marcar el checkbox */
+  }
+
+  .navbar-toggle {
+    display: flex; /* Mostrar el menú hamburguesa en pantallas pequeñas */
+  }
+
+  /* Estilos para transformar el menú hamburguesa en una 'X' */
+  .navbar-checkbox:checked + .navbar-toggle .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Primera barra se transforma */
+  }
+
+  .navbar-checkbox:checked + .navbar-toggle .bar:nth-child(2) {
+    opacity: 0; /* Segunda barra se oculta */
+  }
+
+  .navbar-checkbox:checked + .navbar-toggle .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Tercera barra se transforma */
   }
 }
-.navbar-brand {
-  white-space: nowrap;
-  font-size: 16px;
-}
-.theme-toggle {white-space: nowrap;
-  font-size: 16px;
- }

@@ -7,3 +7,38 @@ body {
   .body {
     padding-top: 60px; 
 }
+
+html {
+  scroll-behavior: smooth; /* Suaviza el scroll al hacer clic en los enlaces */
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  min-height: 100vh; /* Cada sección ocupará al menos la altura de la ventana */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#hero {
+  background-color: #f0f0f0; /* Color de fondo para la sección hero */
+}
+
+#projects {
+  background-color: #e0e0e0; /* Color de fondo para la sección de proyectos */
+}
+
+#about {
+  background-color: #d0d0d0; /* Color de fondo para la sección "About" */
+}
+
+#contact {
+  background-color: #c0c0c0; /* Color de fondo para la sección de contacto */
+}

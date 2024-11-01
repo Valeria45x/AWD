@@ -1,10 +1,5 @@
 /* Hero Section */
-.hero {
-  background: url(assets/icons/oni.svg) no-repeat center center/cover;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  padding: 100px 20px;
-}
+
 
 .hero h1 {
   font-size: var(--text-3xl);
@@ -13,26 +8,12 @@
   overflow: hidden;
 }
 
-.hero p {
-  font-size: var(--text-lg);
-}
 
 
-.hero-svg {
-  position: relative; 
-  display: inline-block; 
-  cursor: pointer;
-}
+
 
 /* Modo oscuro para el título */
 .dark-mode h1 {
   color: white; 
 }
-/* Modo oscuro para SVG */
 
-.dark-mode .hero-svg svg path {
-  fill: white !important; /* Forzar el cambio a blanco en modo oscuro */
-}
-.dark-mode .hero-svg svg:hover path {
-  fill: var(--primary-color) !important; 
-}
