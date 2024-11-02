@@ -29,6 +29,9 @@ section {
   scroll-snap-align: start; /* Alinear cada sección al inicio al hacer scroll */
   scroll-behavior: smooth;
 }
+.navbar, footer {
+  width: calc(100% - 20px); /* Leaves space for scrollbar */
+}
 
 #hero {
   background-color: #000000; /* Background color for the hero section */
