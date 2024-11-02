@@ -8,10 +8,13 @@ footer {
   left: 0;
   right: 0;
   padding: 20px;
-  background-color: var(--navbar-footer-color);
+  background: rgba(0, 0, 0, 0); /* Fondo semitransparente */
   color: var(--text-color);
-  font-size: var(--text-sm); 
+  font-size: var(--text-sm);
   z-index: 1000;
+  backdrop-filter: blur(10px); /* Desenfoque de fondo */
+  border-top: 1px solid rgba(255, 255, 255, 0); /* Borde tenue */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 
@@ -24,14 +27,17 @@ footer a {
 
 /* Estilos para el ícono */
 .github-icon {
-  width: 24px; /* Ajusta el tamaño del ícono si es necesario */
+  width: 24px;
   height: auto;
+  transition: color 0.3s ease; /* Transición suave */
 }
 
-/* Cambiar el color o estilo del ícono en hover */
+
+/* Efecto hover para el ícono de GitHub */
 footer a:hover .github-icon {
-  opacity: 0.8;
+  fill: var(--primary-color); /* Cambia el color a la variable verde */
 }
+
 footer p {
 font-size: var(--text-xs);
 

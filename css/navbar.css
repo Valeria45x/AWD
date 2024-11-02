@@ -1,6 +1,6 @@
 /* Navbar Container */
 .navbar {
-  background-color: var(--navbar-footer-color);
+  background: rgba(0, 0, 0, 0); /* Fondo semitransparente */
   color: var(--text-color);
   display: flex;
   justify-content: space-between;
@@ -12,6 +12,9 @@
   right: 0;
   z-index: 1000;
   font-size: var(--text-base);
+  backdrop-filter: blur(10px); /* Desenfoque de fondo */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Borde tenue */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 /* Navbar Links */

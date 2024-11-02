@@ -31,9 +31,11 @@ section {
 }
 
 #hero {
-  background-color: #ffffff; /* Background color for the hero section */
+  background-color: #000000; /* Background color for the hero section */
 }
-
+#intro {
+  background-color: #000000; /* Background color for the hero section */
+}
 #history {
   background-color: #000000; /* Background color for the history section */
 }
