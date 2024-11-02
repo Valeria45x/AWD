@@ -41,40 +41,6 @@
 }
 
 
-/* Navbar media query for screens up to 768px */
-@media (max-width: 768px) {
-  .navbar-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: var(--background-color);
-      position: absolute;
-      top: 60px;
-      left: 0;
-  } 
-}
-/* Navbar Toggle Button visible on small screens */
-@media (max-width: 767px) {
-  .navbar-toggle {
-    display: flex;
-  }
-
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    background-color: var(--navbar-footer-color);
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    text-align: right;
-  }
-
-  /* Show navbar links when checkbox is checked */
-  .navbar-checkbox:checked ~ .navbar-links {
-    display: flex;
-  }
-}
 
 @media (min-width: 768px) {
   .navbar-links {

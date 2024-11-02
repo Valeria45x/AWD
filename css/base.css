@@ -31,17 +31,25 @@ section {
 }
 
 #hero {
-  background-color: #ffffff; /* Color de fondo para la sección hero */
+  background-color: #ffffff; /* Background color for the hero section */
 }
 
-#projects {
-  background-color: #000000; /* Color de fondo para la sección de proyectos */
+#history {
+  background-color: #000000; /* Background color for the history section */
 }
 
-#about {
-  background-color: #000000; /* Color de fondo para la sección "About" */
+#culture {
+  background-color: #000000; /* Background color for the culture section */
 }
 
-#contact {
-  background-color: #000000; /* Color de fondo para la sección de contacto */
+#politics {
+  background-color: #000000; /* Background color for the politics section */
+}
+
+#impact {
+  background-color: #000000; /* Background color for the impact section */
+}
+
+#help {
+  background-color: #000000; /* Background color for the help section */
 }
