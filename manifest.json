@@ -1,27 +1,35 @@
 {
   "lang": "en",
   "dir": "ltr",
-  "name": "Self Portrait Project",
-  "short_name": "SPP",
-  "icons": [{
-      "src": "/path/to/icon-64x64.webp",
+  "name": "Discover Puerto Rico",
+  "short_name": "DPR",
+  "icons": [
+    {
+      "src": "assets/favicon/favicon-64x64.webp",
       "sizes": "64x64",
       "type": "image/webp"
-    }, {
-      "src": "/path/to/icon-64x64.png",
+    },
+    {
+      "src": "assets/favicon/favicon-64x64.png",
       "sizes": "64x64",
       "type": "image/png"
-    }, {
-      "src": "/path/to/icon-128x128.png",
-      "sizes": "128x128",
+    },
+    {
+      "src": "assets/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
   "scope": "/",
-  "id": "self-portrait-project",
-  "start_url": "/start.html",
-  "display": "fullscreen",
+  "id": "discover-puerto-rico",
+  "start_url": "/index.html",
+  "display": "standalone",
   "orientation": "landscape",
-  "theme_color": "#f0f0f0",  // Light gray
-  "background_color": "#ffffff"  // White
+  "theme_color": "var(--theme-color)",
+  "background_color": "var(--background-color)"
 }

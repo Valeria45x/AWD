@@ -4,7 +4,8 @@
   --secondary-color: hsla(0, 0%, 29%, 1);   /* Gray color #4b4b4b */
   --navbar-footer-color: hsla(0, 0%, 0%, 1); /* Black color #000000 */
   --text-color: hsla(0, 0%, 100%, 1);      /* White color #ffffff */
-  --background-color: #dcdcdc; 
+  --background-color: #000000; 
+  --theme-color: #ffffff; /* White */
 }
 
   

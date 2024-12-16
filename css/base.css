@@ -34,27 +34,36 @@ section {
 }
 
 #hero {
-  background-color: #000000; /* Background color for the hero section */
+  background-color: var(--background-color);
 }
 #intro {
-  background-color: #000000; /* Background color for the hero section */
+  background-color: var(--background-color);
 }
 #history {
-  background-color: #000000; /* Background color for the history section */
+  background-color: var(--background-color);
 }
 
 #culture {
-  background-color: #000000; /* Background color for the culture section */
+  background-color: var(--background-color);
 }
 
 #politics {
-  background-color: #000000; /* Background color for the politics section */
+  background-color: var(--background-color);
 }
 
 #impact {
-  background-color: #000000; /* Background color for the impact section */
+  background-color: var(--background-color);
 }
 
 #help {
-  background-color: #000000; /* Background color for the help section */
+  background-color: var(--background-color);
+}
+.back-home {
+  color: var(--text-color); /* Usa la variable para el color del texto */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-home:hover {
+  color: var(--primary-color); /* Usa la variable para el color al pasar el ratón */
 }

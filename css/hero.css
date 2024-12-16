@@ -1,11 +1,3 @@
-/* Hero Section */
 
-
-.hero h1 {
-  font-size: var(--text-3xl);
-  margin-bottom: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-}
 
 
