@@ -1,0 +1,27 @@
+/* theme.css */
+:root {
+  /* Base colors */
+  --pure-white: hsla(0, 0%, 100%, 1);
+  --pure-black: hsla(0, 0%, 0%, 1);
+  --primary-green: hsla(120, 75%, 58%, 1);
+  --secondary-dark: hsla(0, 0%, 20%, 1);
+
+  /* Light theme */
+  --light-background: var(--pure-white);
+  --light-text: hsla(0, 0%, 20%, 1);
+  --light-navbar: hsla(0, 0%, 0%, 0.85);
+  --light-navbar-text: var(--pure-white);
+
+  /* Dark theme */
+  --dark-background: hsla(0, 0%, 7%, 1);
+  --dark-text: var(--pure-white);
+  --dark-navbar: hsla(0, 0%, 0%, 0.85);
+  --dark-navbar-text: var(--pure-white);
+
+  /* Default theme variables */
+  --background-color: var(--light-background);
+  --text-color: var(--light-text);
+  --navbar-footer-color: var(--light-navbar);
+  --navbar-text-color: var(--light-navbar-text);
+  --primary-color: var(--primary-green);
+}

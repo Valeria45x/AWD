@@ -1,122 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Discover Puerto Rico</title>
-    <meta
-      name="AWD Project"
-      content="A personal website showcasing the history and culture of Puerto Rico."
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the stories, flavors, and spirit of Puerto Rico through an interactive cultural journey">
 
-    <!-- Link to CSS -->
-    <link rel="stylesheet" href="./css/index.css" />
+    <!-- Theme Color and PWA Support -->
+    <meta name="theme-color" content="#39e639">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="author" content="Your Name">
+    <meta name="keywords" content="Puerto Rico, Culture, History, Travel, Interactive, Journey">
 
-    <!-- Manifest -->
-    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Puerto Rico: A Journey Through Culture and Resilience">
+    <meta property="og:description" content="Discover the stories, flavors, and spirit of Puerto Rico through an interactive cultural journey">
+    <meta property="og:type" content="website">
 
-    <!-- Theme color -->
-    <meta name="theme-color" content="#ffffff" />
+    <!-- Apple Specific -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="mask-icon" href="assets/favicon/favicon.svg" color="#39e639">
+    <!-- Favicon Configuration -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/web-app-manifest-192x192.png">
 
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="assets/favicon/favicon-48x48.png"
-      sizes="48x48"
-    />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="192x192"
-      href="assets/favicon/web-app-manifest-192x192.png"
-    />
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="navbar-brand">Discover Puerto Rico</div>
-        <input type="checkbox" id="navbarToggle" class="navbar-checkbox" />
-        <label
-          for="navbarToggle"
-          class="navbar-toggle"
-          aria-label="Toggle navigation"
-        >
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </label>
-        <ul class="navbar-links">
-          <li><a href="#hero">About</a></li>
-          <li><a href="#history">History</a></li>
-          <li><a href="#culture">Culture</a></li>
-          <li><a href="#politics">Politics</a></li>
-          <li><a href="#impact">Impact</a></li>
-          <li><a href="#help">Help</a></li>
-        </ul>
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Modular CSS Structure -->
+    <!-- Base Styles: Foundation of our design system -->
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+    <link rel="stylesheet" href="css/base/theme.css">
+
+    <!-- Component Styles: Individual module styling -->
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/components/hero.css">
+    <link rel="stylesheet" href="css/components/timeline.css">
+    <link rel="stylesheet" href="css/components/culture.css">
+    <link rel="stylesheet" href="css/components/stories.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/404.css">
+
+    <!-- Main Stylesheet: Global styles and utilities -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>Puerto Rico: A Journey Through Culture and Resilience</title>
+</head>
+<body>
+    <header class="main-header">
+        <!-- In your header's navbar -->
+        <nav class="navbar">
+          <div class="container">
+              <a href="#" class="logo">PR Journey</a>
+              <button class="navbar__toggle" aria-label="Toggle navigation menu">
+                  <span class="navbar__toggle-icon"></span>
+              </button>
+              <div class="navbar__menu">
+                  <ul class="navbar__list">
+                      <li><a href="#timeline">Timeline</a></li>
+                      <li><a href="#culture">Culture</a></li>
+                      <li><a href="#stories">Stories</a></li>
+                      <li><button class="theme-toggle" aria-label="Toggle theme"></button></li>
+                  </ul>
+              </div>
+          </div>
       </nav>
     </header>
 
-    <main class="body">
-      <section id="hero" class="hero">
-        <h1 class="hero-title">Puerto Rico</h1>
-        <div class="hero-svg"></div>
-      </section>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+    <div class="container">
+        <div class="hero__content">
+            <h1>Welcome to Puerto Rico</h1>
 
-      <section id="intro" class="intro">
-        <h2>Welcome</h2>
-        <p>Discover the beauty of Puerto Rico.</p>
-      </section>
+            <a href="#timeline" class="cta-button">Begin Your Journey</a>
+        </div>
+    </div>
+</section>
+<section id="timeline" class="timeline">
 
-      <section id="history" class="section">
-        <h2>History</h2>
-        <p>Details about Puerto Rico's rich history.</p>
-      </section>
+<div class="container">
+    <!-- Rest of your timeline content -->
+</div>
+  <div class="container">
+    <h2>
+    <span class="timeline-title-top">Puerto Rico Through Time:</span>
+    <span class="timeline-title-bottom">The Roots of Resilience and Culture</span>
+</h2>
+      <p class="timeline-intro">Before the arrival of the Spanish, Puerto Rico was home to the Taíno people—a rich culture whose spirit lives on today. Here's a look at the key moments that have shaped the island's identity.</p>
+      <p style="text-align: center; font-size: 2em;">&#8595;</p>
+      <div class="ag-timeline-block">
+          <section class="ag-section">
+              <div class="ag-format-container">
+                  <div class="js-timeline ag-timeline">
+                      <div class="js-timeline_line ag-timeline_line">
+                          <div class="js-timeline_line-progress ag-timeline_line-progress"></div>
+                      </div>
+                      <div class="ag-timeline_list">
+                          <!-- Pre-Colonial Era -->
+                          <div class="js-timeline_item ag-timeline_item">
+                              <div class="ag-timeline-card_box">
+                                  <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                                      <div class="ag-timeline-card_point">1400</div>
+                                  </div>
+                              </div>
+                              <div class="ag-timeline-card_item">
+                                  <div class="ag-timeline-card_inner">
+                                      <div class="ag-timeline-card_img-box">
+                                          <img src="/api/placeholder/640/360" class="ag-timeline-card_img" alt="Taíno artifacts and symbols" />
+                                      </div>
+                                      <div class="ag-timeline-card_info">
+                                          <div class="ag-timeline-card_title">Taíno Heritage</div>
+                                          <div class="ag-timeline-card_desc">
+                                              The Taíno people, skilled agriculturalists and artisans, inhabited the island they called Borikén. Their advanced society valued community, art, and harmony with nature. Today, their heritage is still visible in Puerto Rican language, food, and traditions.
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="ag-timeline-card_arrow"></div>
+                              </div>
+                          </div>
 
-      <section id="culture" class="section">
-        <h2>Culture</h2>
-        <p>Information about the vibrant Puerto Rican culture.</p>
-      </section>
+                          <!-- 1493 -->
+                          <div class="js-timeline_item ag-timeline_item">
+                              <div class="ag-timeline-card_box">
+                                  <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                                      <div class="ag-timeline-card_point">1493</div>
+                                  </div>
+                              </div>
+                              <div class="ag-timeline-card_item">
+                                  <div class="ag-timeline-card_inner">
+                                      <div class="ag-timeline-card_img-box">
+                                          <img src="/api/placeholder/640/360" class="ag-timeline-card_img" alt="Spanish arrival in Puerto Rico" />
+                                      </div>
+                                      <div class="ag-timeline-card_info">
+                                          <div class="ag-timeline-card_title">European Contact</div>
+                                          <div class="ag-timeline-card_desc">
+                                              This marked the beginning of European influence, introducing new systems, beliefs, and challenges to the island's original inhabitants.
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="ag-timeline-card_arrow"></div>
+                              </div>
+                          </div>
 
-      <section id="politics" class="section">
-        <h2>Politics</h2>
-        <p>Analysis of the current political situation in Puerto Rico.</p>
-      </section>
+                          <!-- 1521 -->
+                          <div class="js-timeline_item ag-timeline_item">
+                              <div class="ag-timeline-card_box">
+                                  <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                                      <div class="ag-timeline-card_point">1521</div>
+                                  </div>
+                              </div>
+                              <div class="ag-timeline-card_item">
+                                  <div class="ag-timeline-card_inner">
+                                      <div class="ag-timeline-card_img-box">
+                                          <img src="/api/placeholder/640/360" class="ag-timeline-card_img" alt="Old San Juan" />
+                                      </div>
+                                      <div class="ag-timeline-card_info">
+                                          <div class="ag-timeline-card_title">Cultural Fusion Begins</div>
+                                          <div class="ag-timeline-card_desc">
+                                              Under Spanish rule, the island became a vital colonial outpost, blending Taíno, Spanish, and African cultures into a unique identity. Traditions like bomba music, Taíno-inspired dishes, and Catholic celebrations reflect this fusion.
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="ag-timeline-card_arrow"></div>
+                              </div>
+                          </div>
 
-      <section id="impact" class="section">
-        <h2>Impact</h2>
-        <p>Exploration of Puerto Rico's global and local impact.</p>
-      </section>
+                          <!-- 1898 -->
+                          <div class="js-timeline_item ag-timeline_item">
+                              <div class="ag-timeline-card_box">
+                                  <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                                      <div class="ag-timeline-card_point">1898</div>
+                                  </div>
+                              </div>
+                              <div class="ag-timeline-card_item">
+                                  <div class="ag-timeline-card_inner">
+                                      <div class="ag-timeline-card_img-box">
+                                          <img src="/api/placeholder/640/360" class="ag-timeline-card_img" alt="Spanish-American War transfer" />
+                                      </div>
+                                      <div class="ag-timeline-card_info">
+                                          <div class="ag-timeline-card_title">American Era Begins</div>
+                                          <div class="ag-timeline-card_desc">
+                                              This transition brought both opportunity and challenge, introducing a new layer of cultural and political influence to the island's identity.
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="ag-timeline-card_arrow"></div>
+                              </div>
+                          </div>
 
-      <section id="help" class="section">
-        <h2>Help</h2>
-        <p>
-          Ways you can help and get involved with Puerto Rico's community and
-          causes.
-        </p>
-      </section>
+                          <!-- 1952 -->
+                          <div class="js-timeline_item ag-timeline_item">
+                              <div class="ag-timeline-card_box">
+                                  <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                                      <div class="ag-timeline-card_point">1952</div>
+                                  </div>
+                              </div>
+                              <div class="ag-timeline-card_item">
+                                  <div class="ag-timeline-card_inner">
+                                      <div class="ag-timeline-card_img-box">
+                                          <img src="/api/placeholder/640/360" class="ag-timeline-card_img" alt="Commonwealth establishment" />
+                                      </div>
+                                      <div class="ag-timeline-card_info">
+                                          <div class="ag-timeline-card_title">Commonwealth Status</div>
+                                          <div class="ag-timeline-card_desc">
+                                              With Commonwealth status, Puerto Rico gained a degree of self-governance while remaining a U.S. territory, sparking ongoing debates about its political future.
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="ag-timeline-card_arrow"></div>
+                              </div>
+                          </div>
+
+                          <!-- 1975 -->
+                          <div class="js-timeline_item ag-timeline_item">
+                              <div class="ag-timeline-card_box">
+                                  <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                                      <div class="ag-timeline-card_point">1975</div>
+                                  </div>
+                              </div>
+                              <div class="ag-timeline-card_item">
+                                  <div class="ag-timeline-card_inner">
+                                      <div class="ag-timeline-card_img-box">
+                                          <img src="/api/placeholder/640/360" class="ag-timeline-card_img" alt="Economic challenges" />
+                                      </div>
+                                      <div class="ag-timeline-card_info">
+                                          <div class="ag-timeline-card_title">Economic Challenges</div>
+                                          <div class="ag-timeline-card_desc">
+                                              Puerto Rico faced its first major fiscal crisis after achieving Commonwealth status, with high unemployment, factory closures, and growing deficits. These challenges underscored systemic economic issues that still resonate today.
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="ag-timeline-card_arrow"></div>
+                              </div>
+                          </div>
+
+                          <!-- 2017 -->
+                          <div class="js-timeline_item ag-timeline_item">
+                              <div class="ag-timeline-card_box">
+                                  <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                                      <div class="ag-timeline-card_point">2017</div>
+                                  </div>
+                              </div>
+                              <div class="ag-timeline-card_item">
+                                  <div class="ag-timeline-card_inner">
+                                      <div class="ag-timeline-card_img-box">
+                                          <img src="/api/placeholder/640/360" class="ag-timeline-card_img" alt="Hurricane Maria impact" />
+                                      </div>
+                                      <div class="ag-timeline-card_info">
+                                          <div class="ag-timeline-card_title">Natural Disaster Tests Resilience</div>
+                                          <div class="ag-timeline-card_desc">
+                                              Hurricane Maria devastated Puerto Rico, exposing its fragile infrastructure and leaving millions without power or water for months. However, the island's recovery efforts showcased the strength, unity, and creativity of its people.
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="ag-timeline-card_arrow"></div>
+                              </div>
+                          </div>
+
+                          <!-- Present -->
+                          <div class="js-timeline_item ag-timeline_item">
+                              <div class="ag-timeline-card_box">
+                                  <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                                      <div class="ag-timeline-card_point">Today</div>
+                                  </div>
+                              </div>
+                              <div class="ag-timeline-card_item">
+                                  <div class="ag-timeline-card_inner">
+                                      <div class="ag-timeline-card_img-box">
+                                          <img src="/api/placeholder/640/360" class="ag-timeline-card_img" alt="Modern Puerto Rico" />
+                                      </div>
+                                      <div class="ag-timeline-card_info">
+                                          <div class="ag-timeline-card_title">Living Cultural Legacy</div>
+                                          <div class="ag-timeline-card_desc">
+                                              Today, Puerto Rico's identity is a testament to its history—a blend of Taíno, Spanish, African, and U.S. influences that have created a culture unlike any other. From its vibrant music and food to its enduring resilience, Puerto Rico continues to inspire.
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="ag-timeline-card_arrow"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+      </div>
+
+      <p class="timeline-connector">Even in the face of conquest, natural disasters, and economic hardship, Puerto Rico has preserved its cultural essence. From the Taíno to today, the island's vibrant traditions tell a story of resilience.</p>
+  </div>
+</section>
+
+        <!-- Culture Section -->
+        <section id="culture" class="culture">
+            <div class="container">
+                <h2>Experience Puerto Rico's Vibrant Culture</h2>
+                <!-- Food and Music subsections will be added -->
+            </div>
+        </section>
+
+        <!-- Personal Stories Section -->
+        <section id="stories" class="stories">
+            <div class="container">
+                <h2>Reflections: Who I Am Reflects Where I Come From</h2>
+                <div class="story-content">
+                    <p>Puerto Rico is more than a place—it's a part of who I am. Through its challenges and triumphs, this island has shaped my values, my resilience, and my creativity. This website is my self-portrait, painted with the colors of Puerto Rican life.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-      <a
-        href="https://github.com/Valeria45x/AWD.git"
-        target="_blank"
-        aria-label="GitHub"
-      >
-        <img
-          src="assets/icons/github-mark.svg"
-          alt="GitHub"
-          class="github-icon"
-        />
-      </a>
-      <p>Made with a lot of patience by Val</p>
+    <footer class="main-footer">
+        <div class="container">
+            <p>Website created under Creative Commons License. Designed with ❤️ for Puerto Rico.</p>
+            <button class="theme-toggle" aria-label="Toggle dark/light mode">
+                <span class="theme-toggle-icon"></span>
+            </button>
+        </div>
     </footer>
 
-    <script src="js/hero.js"></script>
-    <script src="js/themes.js"></script>
-    <script src="js/app.js" defer></script>
-    <script src="js/navbar.js"></script>
-  </body>
+ <!-- JavaScript Dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/components/timeline.js"></script>
+<script src="js/components/navbar.js"></script>
+<script src="js/components/theme.js"></script>
+<script src="js/app.js"></script>
+</body>
 </html>

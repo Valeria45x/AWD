@@ -1,0 +1,155 @@
+/* Navbar with working glassmorphism */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  z-index: 1000; /* Ensure navbar stays on top */
+  background: hsla(0, 0%, 0%, 0.75);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
+}
+
+/* Logo styling */
+.logo {
+  color: var(--navbar-text-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Navigation menu */
+.navbar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__list a {
+  color: var(--navbar-text-color);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  transition: color 0.3s ease;
+}
+
+.navbar__list a:hover {
+  color: var(--primary-color);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--navbar-text-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* Mobile menu button */
+.navbar__toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.navbar__toggle-icon,
+.navbar__toggle-icon::before,
+.navbar__toggle-icon::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--navbar-text-color);
+  transition: all 0.3s ease;
+}
+
+.navbar__toggle-icon {
+  position: relative;
+}
+
+.navbar__toggle-icon::before,
+.navbar__toggle-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.navbar__toggle-icon::before {
+  top: -8px;
+}
+
+.navbar__toggle-icon::after {
+  bottom: -8px;
+}
+
+@media (max-width: 768px) {
+  .navbar__toggle {
+      display: block;
+  }
+
+  .navbar__menu {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: hsla(0, 0%, 0%, 0.9);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      transform: translateY(-100%);
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s ease;
+  }
+
+  .navbar__menu.active {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+  }
+
+  .navbar__list {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .navbar__toggle.active .navbar__toggle-icon {
+      background: transparent;
+  }
+
+  .navbar__toggle.active .navbar__toggle-icon::before {
+      top: 0;
+      transform: rotate(45deg);
+  }
+
+  .navbar__toggle.active .navbar__toggle-icon::after {
+      bottom: 0;
+      transform: rotate(-45deg);
+  }
+}
+
+.logo-icon {
+  height: 24px; /* Adjust size as needed */
+  width: auto;
+  vertical-align: middle; /* Align icon with text */
+}

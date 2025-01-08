@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Colors</title>
+
+    <!-- Import base styles -->
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+
+    <style>
+        body {
+            padding: 2rem;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .colors-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .theme-section {
+            margin: 2rem 0;
+        }
+
+        .theme-section h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .color-item {
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--background-color);
+            border: 1px solid var(--text-color);
+        }
+
+        .color-swatch {
+            height: 100px;
+            width: 100%;
+        }
+
+        .color-info {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .color-name {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .color-value {
+            font-family: monospace;
+            font-size: 0.875rem;
+        }
+
+        /* Color swatches */
+        .swatch-primary { background-color: var(--primary-green); }
+        .swatch-background-light { background-color: var(--light-background); }
+        .swatch-text-light { background-color: var(--light-text); }
+        .swatch-navbar-light { background-color: var(--light-navbar); }
+        .swatch-background-dark { background-color: var(--dark-background); }
+        .swatch-text-dark { background-color: var(--dark-text); }
+        .swatch-navbar-dark { background-color: var(--dark-navbar); }
+
+        /* Theme toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--primary-green);
+            color: var(--pure-white);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="colors-container">
+        <h1>Theme Colors</h1>
+
+        <button class="theme-toggle" onclick="document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark')">
+            Toggle Theme
+        </button>
+
+        <div class="theme-section">
+            <h2>Base Colors</h2>
+            <div class="color-grid">
+                <div class="color-item">
+                    <div class="color-swatch swatch-primary"></div>
+                    <div class="color-info">
+                        <div class="color-name">Primary Green</div>
+                        <code class="color-value">hsla(120, 75%, 58%, 1)</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="theme-section">
+            <h2>Light Theme</h2>
+            <div class="color-grid">
+                <div class="color-item">
+                    <div class="color-swatch swatch-background-light"></div>
+                    <div class="color-info">
+                        <div class="color-name">Background</div>
+                        <code class="color-value">var(--light-background)</code>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch swatch-text-light"></div>
+                    <div class="color-info">
+                        <div class="color-name">Text</div>
+                        <code class="color-value">var(--light-text)</code>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch swatch-navbar-light"></div>
+                    <div class="color-info">
+                        <div class="color-name">Navbar</div>
+                        <code class="color-value">var(--light-navbar)</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="theme-section">
+            <h2>Dark Theme</h2>
+            <div class="color-grid">
+                <div class="color-item">
+                    <div class="color-swatch swatch-background-dark"></div>
+                    <div class="color-info">
+                        <div class="color-name">Background</div>
+                        <code class="color-value">var(--dark-background)</code>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch swatch-text-dark"></div>
+                    <div class="color-info">
+                        <div class="color-name">Text</div>
+                        <code class="color-value">var(--dark-text)</code>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch swatch-navbar-dark"></div>
+                    <div class="color-info">
+                        <div class="color-name">Navbar</div>
+                        <code class="color-value">var(--dark-navbar)</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

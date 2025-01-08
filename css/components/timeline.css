@@ -1,0 +1,240 @@
+.ag-timeline-block {
+  padding: 6rem 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.ag-format-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Timeline structure */
+.ag-timeline {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.ag-timeline_line {
+  width: 2px;
+  background-color: hsla(120, 75%, 58%, 0.3);
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.ag-timeline_line-progress {
+  width: 100%;
+  height: 0;
+  background-color: var(--primary-color);
+  transition: height 0.3s ease;
+}
+
+/* Timeline items */
+.ag-timeline_item {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.ag-timeline_item:nth-child(2n) {
+  text-align: right;
+}
+
+/* Card box positioning */
+.ag-timeline-card_box {
+  padding: 0 0 20px 50%;
+}
+
+.ag-timeline_item:nth-child(2n) .ag-timeline-card_box {
+  padding: 0 50% 20px 0;
+}
+
+/* Point box */
+.ag-timeline-card_point-box {
+  display: inline-block;
+  margin: 0 14px 0 -28px;
+}
+
+.ag-timeline_item:nth-child(2n) .ag-timeline-card_point-box {
+  margin: 0 -28px 0 14px;
+}
+
+/* Timeline point */
+.ag-timeline-card_point {
+  height: 50px;
+  line-height: 50px;
+  width: 50px;
+  border: 3px solid var(--primary-color);
+  background-color: var(--background-color);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-color);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.js-ag-active .ag-timeline-card_point {
+  background-color: var(--primary-color);
+  color: var(--pure-white);
+}
+
+/* Card styling */
+.ag-timeline-card_item {
+  display: inline-block;
+  width: 45%;
+  margin: -77px 0 0;
+  background-color: hsla(0, 0%, 100%, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  opacity: 0;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.ag-timeline_item:nth-child(2n+1) .ag-timeline-card_item {
+  transform: translateX(-200%);
+}
+
+.ag-timeline_item:nth-child(2n) .ag-timeline-card_item {
+  transform: translateX(200%);
+}
+
+.js-ag-active.ag-timeline_item:nth-child(2n+1) .ag-timeline-card_item,
+.js-ag-active.ag-timeline_item:nth-child(2n) .ag-timeline-card_item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Card content */
+.ag-timeline-card_inner {
+  padding: 1rem;
+}
+
+.ag-timeline-card_img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  object-fit: cover;
+}
+
+.ag-timeline-card_info {
+  padding: 1.5rem;
+}
+
+.ag-timeline-card_title {
+  font-size: var(--text-lg);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.ag-timeline-card_desc {
+  line-height: 1.5;
+  font-size: var(--text-base);
+  color: var(--text-color);
+}
+.ag-timeline-card_item {
+  display: inline-block;
+  width: 45%;
+  margin: -77px 0 0;
+  background-color: var(--background-color);
+  box-shadow: 0 4px 16px hsla(0, 0%, 0%, 0.1);
+  border-radius: 8px;
+  border: 1px solid hsla(0, 0%, 0%, 0.1);
+  opacity: 0;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+[data-theme="dark"] .ag-timeline-card_item {
+  background-color: hsla(0, 0%, 100%, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+}
+
+/* Arrow styling */
+.ag-timeline-card_arrow {
+  height: 18px;
+  width: 18px;
+  background-color: var(--background-color);
+  position: absolute;
+  top: 20px;
+  right: 0;
+  transform: rotate(45deg);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .ag-timeline_line {
+      left: 30px;
+  }
+
+  .ag-timeline_item:nth-child(2n) {
+      text-align: left;
+  }
+
+  .ag-timeline-card_box,
+  .ag-timeline_item:nth-child(2n) .ag-timeline-card_box {
+      padding: 0 0 20px;
+  }
+
+  .ag-timeline-card_point-box,
+  .ag-timeline_item:nth-child(2n) .ag-timeline-card_point-box {
+      margin: 0 0 0 8px;
+  }
+
+  .ag-timeline-card_item {
+      width: calc(100% - 75px);
+      margin: -65px 0 0 75px;
+  }
+
+  .ag-timeline-card_arrow {
+      right: auto;
+      left: 0;
+  }
+}
+/* Add to timeline.css */
+.timeline {
+  padding: 6rem 0; /* Space from navbar */
+}
+
+.timeline h2,
+.timeline-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+}
+
+.timeline h2 {
+  margin-bottom: 2rem;
+}
+
+/* Remove arrow element */
+.ag-timeline-card_arrow {
+  display: none;
+}
+
+.timeline-icon {
+  position: absolute;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.timeline-icon.taino {
+  right: 10%;
+  transform: translateZ(-2px) scale(3);
+}
+/* Remove image boxes */
+.ag-timeline-card_img-box {
+  display: none;
+}
+
+/* Add more icon positions */

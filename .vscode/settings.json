@@ -1,0 +1,39 @@
+{
+  // Format code automatically when saving files
+  "editor.formatOnSave": true,
+
+  // Use Prettier as the default formatter
+  "editor.defaultFormatter": "esbenp.prettier-vnd",
+
+  // Use 2 spaces for indentation
+  "editor.tabSize": 2,
+
+  // Enable word wrap for better code readability
+  "editor.wordWrap": "on",
+
+  // Add visual guides at 80 and 100 characters
+  "editor.rulers": [80, 100],
+
+  // Remove extra whitespace at end of lines
+  "files.trimTrailingWhitespace": true,
+
+  // Ensure files end with a newline
+  "files.insertFinalNewline": true,
+
+  // HTML formatting settings
+  "html.format.wrapAttributes": "force-aligned",
+
+  // CSS validation and linting
+  "css.validate": true,
+  "css.lint.duplicateProperties": "warning",
+  "css.lint.importStatement": "warning",
+
+  // Live Server settings
+  "liveServer.settings.donotShowInfoMsg": true,
+
+  // Additional helpful settings
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always"
+}

@@ -1,35 +1,40 @@
 {
-  "lang": "en",
-  "dir": "ltr",
-  "name": "Discover Puerto Rico",
-  "short_name": "DPR",
+  "name": "Puerto Rico: A Journey Through Culture",
+  "short_name": "PR Journey",
+  "description": "Discover the spirit of Puerto Rico through an interactive cultural journey",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#39e639",
+  "orientation": "any",
   "icons": [
     {
-      "src": "assets/favicon/favicon-64x64.webp",
-      "sizes": "64x64",
-      "type": "image/webp"
+      "src": "assets/favicon/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
     },
     {
-      "src": "assets/favicon/favicon-64x64.png",
-      "sizes": "64x64",
+      "src": "assets/favicon/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/favicon/favicon-96x96.png",
+      "sizes": "96x96",
       "type": "image/png"
     },
     {
       "src": "assets/favicon/web-app-manifest-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "assets/favicon/web-app-manifest-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ],
-  "scope": "/",
-  "id": "discover-puerto-rico",
-  "start_url": "/index.html",
-  "display": "standalone",
-  "orientation": "landscape",
-  "theme_color": "var(--theme-color)",
-  "background_color": "var(--background-color)"
+  ]
 }
