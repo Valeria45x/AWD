@@ -1,0 +1,54 @@
+/* Footer styling */
+.main-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  z-index: 1000; /* Ensure footer stays on top */
+  background: hsla(0, 0%, 0%, 0.75);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid hsla(0, 0%, 0%, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content */
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.main-footer .container {
+  display: flex;
+  justify-content: space-between; /* Space between text and icon */
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.footer-text {
+  color: var(--navbar-text-color);
+  font-size: 0.875rem;
+  margin: 0;
+  text-align: center; /* Center text */
+  flex: 1; /* Allow text to take available space */
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+
+/* GitHub icon styling */
+.github-icon {
+  fill: var(--navbar-text-color);
+  transition: fill 0.3s ease;
+}
+
+.github-icon:hover {
+  fill: var(--primary-color);
+}
+
+/* Ensure body content does not overlap with the footer */
+body {
+  margin-bottom: 72px; /* Equal to footer height */
+}
