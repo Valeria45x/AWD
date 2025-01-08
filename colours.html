@@ -8,10 +8,35 @@
     <!-- Import base styles -->
     <link rel="stylesheet" href="css/base/reset.css">
     <link rel="stylesheet" href="css/base/variables.css">
-    <link rel="stylesheet" href="css/base/typography.css">\
+    <link rel="stylesheet" href="css/base/typography.css">
     <link rel="stylesheet" href="css/base/theme.css">
 
     <style>
+        :root {
+            --background-color: #ffffff;
+            --text-color: #333333;
+            --primary-green: #4caf50;
+            --light-background: #f5f5f5;
+            --light-text: #666666;
+            --light-navbar: #e0e0e0;
+            --dark-background: #333333;
+            --dark-text: #f5f5f5;
+            --dark-navbar: #444444;
+            --pure-white: #ffffff;
+        }
+
+        :root[data-theme="light"] {
+            --background-color: var(--light-background);
+            --text-color: var(--light-text);
+            --navbar-color: var(--light-navbar);
+        }
+
+        :root[data-theme="dark"] {
+            --background-color: var(--dark-background);
+            --text-color: var(--dark-text);
+            --navbar-color: var(--dark-navbar);
+        }
+
         body {
             padding: 2rem;
             background-color: var(--background-color);
