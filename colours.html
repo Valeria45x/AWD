@@ -12,33 +12,6 @@
     <link rel="stylesheet" href="css/base/theme.css">
 
     <style>
-        :root {
-            /* Base colors */
-            --pure-white: hsla(0, 0%, 100%, 1);
-            --pure-black: hsla(0, 0%, 0%, 1);
-            --primary-green: hsla(120, 75%, 58%, 1);
-            --secondary-dark: hsla(0, 0%, 20%, 1);
-
-            /* Light theme */
-            --light-background: var(--pure-white);
-            --light-text: hsla(0, 0%, 20%, 1);
-            --light-navbar: hsla(0, 0%, 0%, 0.85);
-            --light-navbar-text: var(--pure-white);
-
-            /* Dark theme */
-            --dark-background: hsla(0, 0%, 7%, 1);
-            --dark-text: var(--pure-white);
-            --dark-navbar: hsla(0, 0%, 0%, 0.85);
-            --dark-navbar-text: var(--pure-white);
-
-            /* Default theme variables */
-            --background-color: var(--light-background);
-            --text-color: var(--light-text);
-            --navbar-footer-color: var(--light-navbar);
-            --navbar-text-color: var(--light-navbar-text);
-            --primary-color: var(--primary-green);
-        }
-
         :root[data-theme="light"] {
             --background-color: var(--light-background);
             --text-color: var(--light-text);
@@ -114,6 +87,7 @@
         .swatch-background-dark { background-color: var(--dark-background); }
         .swatch-text-dark { background-color: var(--dark-text); }
         .swatch-navbar-dark { background-color: var(--dark-navbar); }
+        .swatch-secondary-dark { background-color: var(--secondary-dark); }
 
         /* Theme toggle */
         .theme-toggle {
@@ -145,6 +119,13 @@
                     <div class="color-info">
                         <div class="color-name">Primary Green</div>
                         <code class="color-value">hsla(120, 75%, 58%, 1)</code>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch swatch-secondary-dark"></div>
+                    <div class="color-info">
+                        <div class="color-name">Secondary Dark</div>
+                        <code class="color-value">hsla(0, 0%, 20%, 1)</code>
                     </div>
                 </div>
             </div>
