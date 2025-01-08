@@ -13,28 +13,44 @@
 
     <style>
         :root {
-            --background-color: #ffffff;
-            --text-color: #333333;
-            --primary-green: #4caf50;
-            --light-background: #f5f5f5;
-            --light-text: #666666;
-            --light-navbar: #e0e0e0;
-            --dark-background: #333333;
-            --dark-text: #f5f5f5;
-            --dark-navbar: #444444;
-            --pure-white: #ffffff;
+            /* Base colors */
+            --pure-white: hsla(0, 0%, 100%, 1);
+            --pure-black: hsla(0, 0%, 0%, 1);
+            --primary-green: hsla(120, 75%, 58%, 1);
+            --secondary-dark: hsla(0, 0%, 20%, 1);
+
+            /* Light theme */
+            --light-background: var(--pure-white);
+            --light-text: hsla(0, 0%, 20%, 1);
+            --light-navbar: hsla(0, 0%, 0%, 0.85);
+            --light-navbar-text: var(--pure-white);
+
+            /* Dark theme */
+            --dark-background: hsla(0, 0%, 7%, 1);
+            --dark-text: var(--pure-white);
+            --dark-navbar: hsla(0, 0%, 0%, 0.85);
+            --dark-navbar-text: var(--pure-white);
+
+            /* Default theme variables */
+            --background-color: var(--light-background);
+            --text-color: var(--light-text);
+            --navbar-footer-color: var(--light-navbar);
+            --navbar-text-color: var(--light-navbar-text);
+            --primary-color: var(--primary-green);
         }
 
         :root[data-theme="light"] {
             --background-color: var(--light-background);
             --text-color: var(--light-text);
-            --navbar-color: var(--light-navbar);
+            --navbar-footer-color: var(--light-navbar);
+            --navbar-text-color: var(--light-navbar-text);
         }
 
         :root[data-theme="dark"] {
             --background-color: var(--dark-background);
             --text-color: var(--dark-text);
-            --navbar-color: var(--dark-navbar);
+            --navbar-footer-color: var(--dark-navbar);
+            --navbar-text-color: var(--dark-navbar-text);
         }
 
         body {
