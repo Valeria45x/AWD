@@ -1,0 +1,12 @@
+.title-container {
+  width: 100%;
+  max-width: 800px; /* Keep it consistent */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 4rem; /* Keep the larger font size */
+  line-height: 1.2; /* Adjust line height to control spacing */
+  font-weight: bold; /* Ensure it stands out */
+}

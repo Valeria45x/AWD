@@ -1,0 +1,35 @@
+.swiper-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative;
+}
+
+.swiper-image {
+  width: 48%;
+}
+
+.swiper-image-left {
+  text-align: left;
+}
+
+.swiper-image-right {
+  text-align: right;
+}
+
+.swiper-image-inner {
+  position: relative;
+}
+
+.emphasis {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* Additional styling as needed */
