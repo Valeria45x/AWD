@@ -85,6 +85,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('wheel', handleScroll, { passive: false });
 
-  // Ensure swiper starts at the correct position
-  document.querySelector('#culture').scrollIntoView();
+
 });
