@@ -18,15 +18,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const swiperContainer = document.querySelector('.swiper-container');
-  let isSwiperInView = false;
+  let isSwiperActive = false;
 
   const handleScroll = (event) => {
       const rect = swiperContainer.getBoundingClientRect();
-      isSwiperInView = rect.top < window.innerHeight && rect.bottom >= 0;
+      const activationThreshold = window.innerHeight * 0.4; // Adjust percentage as needed
 
-      if (isSwiperInView) {
+      // Check if the swiper container is at least 40% visible
+      if (rect.top < activationThreshold && rect.bottom > activationThreshold) {
+          isSwiperActive = true;
+      } else {
+          isSwiperActive = false;
+      }
+
+      if (isSwiperActive) {
           event.preventDefault();
           const delta = Math.sign(event.deltaY);
+
           if (delta > 0) {
               if (!swiper.isEnd) {
                   swiper.slideNext();
@@ -77,6 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('wheel', handleScroll, { passive: false });
 
-  // Ensure swiper starts at correct position
+  // Ensure swiper starts at the correct position
   document.querySelector('#culture').scrollIntoView();
 });
