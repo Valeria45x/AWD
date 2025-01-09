@@ -1,279 +1,286 @@
-/* css/index.css */
-@import './base/theme.css';
-@import './base/reset.css';
-@import './base/variables.css';
-@import './base/typography.css';
+/* ==========================================================================
+   CSS Imports - Keep original order to maintain cascade
+   ========================================================================== */
+   @import './base/theme.css';
+   @import './base/reset.css';
+   @import './base/variables.css';
+   @import './base/typography.css';
 
-/* Component Styles Import */
-@import './components/navbar.css';
-@import './components/hero.css';
-@import './components/timeline.css';
-@import './components/culture.css';
-@import './components/stories.css';
-@import './components/footer.css';
+   /* Component Styles Import */
+   @import './components/navbar.css';
+   @import './components/hero.css';
+   @import './components/timeline.css';
+   @import './components/culture.css';
+   @import './components/stories.css';
+   @import './components/footer.css';
 
+   /* ==========================================================================
+      Global Utility Classes
+      These classes provide common functionality across components
+      ========================================================================== */
 
-/* Global Utility Classes
-   These classes provide common functionality across components */
+   /* Layout Utilities */
+   .container {
+     width: min(90%, 1200px);
+     margin-inline: auto;
+     padding-inline: var(--spacing-sm);
+   }
 
-/* Layout Utilities */
-.container {
-  width: min(90%, 1200px);
-  margin-inline: auto;
-  padding-inline: var(--spacing-sm);
-}
+   .grid {
+     display: grid;
+     gap: var(--spacing-md);
+   }
 
-.grid {
-  display: grid;
-  gap: var(--spacing-md);
-}
+   .flex {
+     display: flex;
+     gap: var(--spacing-sm);
+   }
 
-.flex {
-  display: flex;
-  gap: var(--spacing-sm);
-}
+   .flex-col {
+     flex-direction: column;
+   }
 
-.flex-col {
-  flex-direction: column;
-}
+   /* Spacing Utilities */
+   .margin-top {
+     margin-top: var(--spacing-md);
+   }
 
-/* Spacing Utilities */
-.margin-top {
-  margin-top: var(--spacing-md);
-}
+   .margin-bottom {
+     margin-bottom: var(--spacing-md);
+   }
 
-.margin-bottom {
-  margin-bottom: var(--spacing-md);
-}
+   /* Visual Effects */
+   .parallax {
+     background-attachment: fixed;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     min-height: 100vh;
+     position: relative;
+   }
 
-/* Visual Effects */
-.parallax {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-  position: relative;
-}
+   /* Accessibility */
+   .visually-hidden {
+     position: absolute;
+     width: 1px;
+     height: 1px;
+     padding: 0;
+     margin: -1px;
+     overflow: hidden;
+     clip: rect(0, 0, 0, 0);
+     white-space: nowrap;
+     border: 0;
+   }
 
-/* Accessibility */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
+   /* Interactive Elements */
+   .hover-effect {
+     transition: transform var(--transition-normal);
+   }
 
-/* Interactive Elements */
-.hover-effect {
-  transition: transform var(--transition-normal);
-}
+   .hover-effect:hover {
+     transform: translateY(-2px);
+   }
 
-.hover-effect:hover {
-  transform: translateY(-2px);
-}
+   /* Theme Transitions */
+   .theme-transition {
+     transition: background-color var(--transition-normal),
+                 color var(--transition-normal);
+   }
 
-/* Theme Transitions */
-.theme-transition {
-  transition: background-color var(--transition-normal),
-              color var(--transition-normal);
-}
+   /* ==========================================================================
+      Base Element Styles
+      ========================================================================== */
+   body {
+     background-color: var(--background-color);
+     color: var(--text-color);
+     transition: background-color var(--transition-normal),
+                 color var(--transition-normal);
+     padding-top: calc(var(--spacing-lg) + var(--spacing-sm)); /* Space for fixed navbar */
+   }
 
-/* Add these styles to your index.css */
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-color var(--transition-normal),
-              color var(--transition-normal);
-  padding-top: calc(var(--spacing-lg) + var(--spacing-sm)); /* Space for fixed navbar */
-}
+   main {
+     width: 100%;
+     min-height: 100vh;
+   }
 
-/* Make sure main content is visible below navbar */
-main {
-  width: 100%;
-  min-height: 100vh;
-}
+   section {
+     padding: var(--spacing-xl) 0;
+   }
 
-/* Ensure proper spacing between sections */
-section {
-  padding: var(--spacing-xl) 0;
-}
-/* Add these styles to your index.css */
-/* Add these styles to your index.css or create a new sections.css */
+   /* ==========================================================================
+      Section Specific Styles
+      ========================================================================== */
+   /* Base styles for all sections */
+   section {
+     position: relative;
+     z-index: 1; /* Ensure all sections stay below navbar */
+   }
 
-/* Base styles for all sections */
-section {
-  position: relative;
-  z-index: 1; /* Ensure all sections stay below navbar */
-}
+   /* Hero section */
+   .hero {
+     position: relative;
+     width: 100%;
+     min-height: 100vh;
+     background-size: cover;
+     background-position: center;
+     color: var(--pure-white);
+     z-index: 1;
+   }
 
-/* Hero section */
-.hero {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  background-image: linear-gradient(
-      hsla(0, 0%, 0%, 0.6),
-      hsla(0, 0%, 0%, 0.6)
-  ), url('/api/placeholder/1920/1080');
-  background-size: cover;
-  background-position: center;
-  color: var(--pure-white);
-  z-index: 1;
-}
+   /* Timeline section */
+   .timeline {
+     position: relative;
+     z-index: 1;
+     background-color: var(--background-color);
+     padding: 4rem 0;
+   }
 
-/* Timeline section */
-.timeline {
-  position: relative;
-  z-index: 1;
-  background-color: var(--background-color);
-  padding: 4rem 0;
-}
+   /* Culture section */
+   .culture {
+     position: relative;
+     z-index: 1;
+     background-color: var(--background-color);
+     padding: 4rem 0;
+   }
 
-/* Culture section */
-.culture {
-  position: relative;
-  z-index: 1;
-  background-color: var(--background-color);
-  padding: 4rem 0;
-}
+   /* Stories section */
+   .stories {
+     position: relative;
+     z-index: 1;
+     background-color: var(--background-color);
+     padding: 4rem 0;
+   }
 
-/* Stories section */
-.stories {
-  position: relative;
-  z-index: 1;
-  background-color: var(--background-color);
-  padding: 4rem 0;
-}
+   /* Footer section */
+   .main-footer {
+     position: relative;
+     z-index: 1;
+     background-color: var(--navbar-footer-color);
+     padding: 2rem 0;
+   }
 
-/* Footer section */
-.main-footer {
-  position: relative;
-  z-index: 1;
-  background-color: var(--navbar-footer-color);
-  padding: 2rem 0;
-}
+   /* Container styles */
+   .container {
+     width: 100%;
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 1rem;
+   }
 
-/* Container styles for consistent spacing */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
+   /* ==========================================================================
+      Color Demo Styles
+      ========================================================================== */
+   .colors-demo {
+     padding: var(--spacing-lg) 0;
+   }
 
-/* Color demo styles */
-.colors-demo {
-  padding: var(--spacing-lg) 0;
-}
+   .color-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+     gap: var(--spacing-md);
+     margin: var(--spacing-md) 0;
+   }
 
-.color-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing-md);
-  margin: var(--spacing-md) 0;
-}
+   .color-card {
+     text-align: center;
+   }
 
-.color-card {
-  text-align: center;
-}
+   .color-swatch {
+     height: 100px;
+     border-radius: 8px;
+     margin-bottom: var(--spacing-sm);
+   }
 
-.color-swatch {
-  height: 100px;
-  border-radius: 8px;
-  margin-bottom: var(--spacing-sm);
-}
+   .primary-color { background-color: var(--primary-color); }
+   .secondary-color { background-color: var(--secondary-color); }
+   .background-color { background-color: var(--background-color); }
+   .text-color { background-color: var(--text-color); }
 
-.primary-color { background-color: var(--primary-color); }
-.secondary-color { background-color: var(--secondary-color); }
-.background-color { background-color: var(--background-color); }
-.text-color { background-color: var(--text-color); }
+   /* ==========================================================================
+      Audio Controls
+      ========================================================================== */
+   .audio-controls {
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     z-index: 1000;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-end;
+     gap: 10px;
+   }
 
-.audio-controls {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-}
+   .audio-buttons {
+     display: flex;
+     gap: 10px;
+     opacity: 0;
+     transform: translateX(20px);
+     transition: all 0.3s ease;
+     pointer-events: none;
+   }
 
-.audio-buttons {
-  display: flex;
-  gap: 10px;
-  opacity: 0;
-  transform: translateX(20px);
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
+   .audio-controls:hover .audio-buttons {
+     opacity: 1;
+     transform: translateX(0);
+     pointer-events: all;
+   }
 
-.audio-controls:hover .audio-buttons {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: all;
-}
+   .audio-toggle,
+   .audio-button {
+     background: var(--dark-bg);
+     border: none;
+     border-radius: 50%;
+     width: 40px;
+     height: 40px;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: all 0.3s ease;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+   }
 
-.audio-toggle,
-.audio-button {
-  background: var(--dark-bg);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
+   .audio-toggle:hover,
+   .audio-button:hover {
+     transform: scale(1.1);
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+   }
 
-.audio-toggle:hover,
-.audio-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
+   .audio-icon {
+     font-size: 20px;
+   }
 
-.audio-icon {
-  font-size: 20px;
-}
+   /* Muted state */
+   .audio-toggle.muted,
+   .audio-button.muted {
+     opacity: 0.5;
+   }
 
-/* Muted state */
-.audio-toggle.muted,
-.audio-button.muted {
-  opacity: 0.5;
-}
+   .audio-toggle.muted .audio-icon::after,
+   .audio-button.muted .audio-icon::after {
+     content: '🔇';
+     position: absolute;
+     font-size: 12px;
+     bottom: -5px;
+     right: -5px;
+   }
 
-.audio-toggle.muted .audio-icon::after,
-.audio-button.muted .audio-icon::after {
-  content: '🔇';
-  position: absolute;
-  font-size: 12px;
-  bottom: -5px;
-  right: -5px;
-}
+   /* ==========================================================================
+      Media Queries
+      ========================================================================== */
+   @media (max-width: 768px) {
+     .audio-controls {
+         bottom: 10px;
+         right: 10px;
+     }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .audio-controls {
-      bottom: 10px;
-      right: 10px;
-  }
+     .audio-toggle,
+     .audio-button {
+         width: 35px;
+         height: 35px;
+     }
 
-  .audio-toggle,
-  .audio-button {
-      width: 35px;
-      height: 35px;
-  }
-
-  .audio-icon {
-      font-size: 18px;
-  }
-}
+     .audio-icon {
+         font-size: 18px;
+     }
+   }

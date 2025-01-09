@@ -1,120 +1,149 @@
-.hero {
-  position: relative;
-  min-height: 100vh;
-  margin-top: -51px;
-  padding-top: 72px;
-  color: var(--pure-white);
-  z-index: 1;
-  display: flex;
-  align-items: center;
+/* ==========================================================================
+   hero.css - Hero Section Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Hero Layout
+   ========================================================================== */
+   .hero {
+    position: relative;
+    min-height: 100vh;
+    margin-top: -51px;
+    padding-top: 72px;
+    color: var(--pure-white);
+    z-index: 1;
+    display: flex;
+    align-items: center;
 }
 
+/* ==========================================================================
+   Hero Background
+   ========================================================================== */
 .hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('https://ik.imagekit.io/Valeria45x/puerto_rico_website/hero/playa-hero.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  opacity: 1;
-  transition: opacity 0.3s ease;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://ik.imagekit.io/Valeria45x/puerto_rico_website/hero/playa-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
-/* Add a subtle overlay for better text readability */
+/* Background Overlay */
 .hero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.2)
-  );
-  z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.2)
+    );
+    z-index: -1;
 }
 
+/* ==========================================================================
+   Hero Content Container
+   ========================================================================== */
 .hero .container {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
 }
 
 .hero__content {
-  text-align: center;
-  padding: 1rem;
-  backdrop-filter: blur(2px);
-  border-radius: 8px;
+    text-align: center;
+    padding: 1rem;
+    backdrop-filter: blur(2px);
+    border-radius: 8px;
 }
 
+/* ==========================================================================
+   Hero Typography
+   ========================================================================== */
 .hero h1 {
-  font-size: var(--text-3xl);
-  margin-bottom: 1rem;
-  line-height: 1.2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  max-width: 800px;
+    font-size: var(--text-3xl);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
 }
 
+/* ==========================================================================
+   CTA Button Styles
+   ========================================================================== */
 .hero .cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 2.5rem;
-  min-width: 160px;
-  height: 48px;
-  background-color: var(--primary-color);
-  color: var(--pure-white);
-  border: 2px solid var(--primary-color);
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: var(--text-base);
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+    /* Layout */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    height: 48px;
+    padding: 1rem 2.5rem;
+
+    /* Visual */
+    background-color: var(--primary-color);
+    color: var(--pure-white);
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+    /* Typography */
+    font-weight: 700;
+    font-size: var(--text-base);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    text-align: center;
+
+    /* Animation */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Button Hover State */
 .hero .cta-button:hover {
-  background-color: transparent;
-  border-color: var(--pure-white);
-  color: var(--pure-white);
-  transform: translateY(-2px);
+    background-color: transparent;
+    border-color: var(--pure-white);
+    color: var(--pure-white);
+    transform: translateY(-2px);
 }
 
-/* Responsive adjustments */
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
 @media (max-width: 768px) {
-  .hero {
-      margin-top: -45px; /* Adjust based on mobile navbar height */
-  }
+    .hero {
+        margin-top: -45px; /* Adjust based on mobile navbar height */
+    }
 
-  .hero h1 {
-      font-size: var(--text-2xl);
-  }
+    .hero h1 {
+        font-size: var(--text-2xl);
+    }
 
-  .hero__content {
-      padding: 0.5rem;
-  }
+    .hero__content {
+        padding: 0.5rem;
+    }
 }
 
-/* Preload image for better performance */
+/* High-Resolution Displays */
 @media (min-width: 768px) {
-  .hero::before {
-      background-image: url('https://ik.imagekit.io/Valeria45x/puerto_rico_website/hero/playa-hero.jpg?tr=w-1200,q-80');
-  }
+    .hero::before {
+        background-image: url('https://ik.imagekit.io/Valeria45x/puerto_rico_website/hero/playa-hero.jpg?tr=w-1200,q-80');
+    }
 }

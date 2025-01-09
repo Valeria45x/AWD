@@ -1,81 +1,149 @@
+/**
+ * Stories Animation Controller
+ *
+ * Manages the stories section animations including:
+ * - Background element creation
+ * - Fade-in animations using Intersection Observer
+ * - Smooth parallax effects on scroll
+ * - Responsive behavior
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Create and append background element
-  const storiesSection = document.querySelector('.stories');
-  const background = document.createElement('div');
-  background.className = 'stories__background';
-  storiesSection.insertBefore(background, storiesSection.firstChild);
+  // Configuration Constants
+  const CONFIG = {
+      MOBILE_BREAKPOINT: 768,
+      INTERSECTION_THRESHOLD: 0.2,
+      RESIZE_DEBOUNCE_DELAY: 250,
+      PARALLAX: {
+          SCROLL_RATE: 0.5,
+          TITLE_DEPTH: 0.2,
+          CONTENT_DEPTH: 0.1
+      }
+  };
 
-  // Intersection Observer for animations
-  const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              const titleContainer = entry.target.querySelector('.title-container');
-              const storyContent = entry.target.querySelector('.story-content');
+  // CSS Selectors
+  const SELECTORS = {
+      storiesSection: '.stories',
+      titleContainer: '.title-container',
+      storyContent: '.story-content'
+  };
 
-              if (titleContainer) {
-                  titleContainer.classList.add('fade-in-up');
-              }
-              if (storyContent) {
-                  storyContent.classList.add('fade-in-up-delay');
-              }
+  // CSS Classes
+  const CLASSES = {
+      background: 'stories__background',
+      fadeInUp: 'fade-in-up',
+      fadeInUpDelay: 'fade-in-up-delay'
+  };
 
-              // Keep observing for parallax effect
-          }
-      });
-  }, {
-      threshold: 0.2
-  });
-
-  // Observe the stories section
-  if (storiesSection) {
-      observer.observe(storiesSection);
+  /**
+   * Creates and appends the background element to the stories section
+   */
+  function initializeBackground() {
+      const storiesSection = document.querySelector(SELECTORS.storiesSection);
+      const background = document.createElement('div');
+      background.className = CLASSES.background;
+      storiesSection.insertBefore(background, storiesSection.firstChild);
+      return storiesSection;
   }
 
-  // Smooth parallax effect on scroll
-  let ticking = false;
+  /**
+   * Creates an Intersection Observer for fade-in animations
+   * @returns {IntersectionObserver} Configured observer instance
+   */
+  function createAnimationObserver() {
+      return new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  const titleContainer = entry.target.querySelector(SELECTORS.titleContainer);
+                  const storyContent = entry.target.querySelector(SELECTORS.storyContent);
 
+                  if (titleContainer) {
+                      titleContainer.classList.add(CLASSES.fadeInUp);
+                  }
+                  if (storyContent) {
+                      storyContent.classList.add(CLASSES.fadeInUpDelay);
+                  }
+              }
+          });
+      }, {
+          threshold: CONFIG.INTERSECTION_THRESHOLD
+      });
+  }
+
+  /**
+   * Updates parallax effect based on scroll position
+   */
   function updateParallax() {
-      if (window.innerWidth <= 768) return;
+      if (window.innerWidth <= CONFIG.MOBILE_BREAKPOINT) return;
 
       const scrolled = window.pageYOffset;
-      const rate = scrolled * 0.5;
+      const rate = scrolled * CONFIG.PARALLAX.SCROLL_RATE;
 
-      const titleContainer = document.querySelector('.title-container');
-      const storyContent = document.querySelector('.story-content');
+      const titleContainer = document.querySelector(SELECTORS.titleContainer);
+      const storyContent = document.querySelector(SELECTORS.storyContent);
 
-      if (titleContainer && titleContainer.classList.contains('fade-in-up')) {
-          titleContainer.style.transform = `translateY(${-rate * 0.2}px) translateZ(0.2px)`;
+      if (titleContainer?.classList.contains(CLASSES.fadeInUp)) {
+          titleContainer.style.transform =
+              `translateY(${-rate * CONFIG.PARALLAX.TITLE_DEPTH}px)
+               translateZ(${CONFIG.PARALLAX.TITLE_DEPTH}px)`;
       }
 
-      if (storyContent && storyContent.classList.contains('fade-in-up-delay')) {
-          storyContent.style.transform = `translateY(${-rate * 0.1}px) translateZ(0.1px)`;
+      if (storyContent?.classList.contains(CLASSES.fadeInUpDelay)) {
+          storyContent.style.transform =
+              `translateY(${-rate * CONFIG.PARALLAX.CONTENT_DEPTH}px)
+               translateZ(${CONFIG.PARALLAX.CONTENT_DEPTH}px)`;
       }
   }
 
-  window.addEventListener('scroll', () => {
-      if (!ticking) {
-          window.requestAnimationFrame(() => {
-              updateParallax();
-              ticking = false;
-          });
-          ticking = true;
+  /**
+   * Resets transform styles for mobile view
+   */
+  function resetMobileStyles() {
+      const titleContainer = document.querySelector(SELECTORS.titleContainer);
+      const storyContent = document.querySelector(SELECTORS.storyContent);
+
+      if (titleContainer) titleContainer.style.transform = '';
+      if (storyContent) storyContent.style.transform = '';
+  }
+
+  /**
+   * Initialize the stories section
+   */
+  function init() {
+      // Initialize background and observers
+      const storiesSection = initializeBackground();
+      const observer = createAnimationObserver();
+
+      if (storiesSection) {
+          observer.observe(storiesSection);
       }
-  }, { passive: true });
 
-  // Handle resize
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-          if (window.innerWidth <= 768) {
-              const titleContainer = document.querySelector('.title-container');
-              const storyContent = document.querySelector('.story-content');
-
-              if (titleContainer) titleContainer.style.transform = '';
-              if (storyContent) storyContent.style.transform = '';
-          } else {
-              updateParallax();
+      // Scroll handler with requestAnimationFrame for performance
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+          if (!ticking) {
+              window.requestAnimationFrame(() => {
+                  updateParallax();
+                  ticking = false;
+              });
+              ticking = true;
           }
-      }, 250);
-  });
+      }, { passive: true });
+
+      // Resize handler with debounce
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+              if (window.innerWidth <= CONFIG.MOBILE_BREAKPOINT) {
+                  resetMobileStyles();
+              } else {
+                  updateParallax();
+              }
+          }, CONFIG.RESIZE_DEBOUNCE_DELAY);
+      });
+  }
+
+  // Initialize the module
+  init();
 });

@@ -1,95 +1,116 @@
-.swiper-container {
-  width: 100%;
-  height: 100vh;
+/* ==========================================================================
+   culture.css - Culture Section Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Swiper Container Configuration
+   ========================================================================== */
+   .swiper-container {
+    width: 100%;
+    height: 100vh;
 }
 
+/* ==========================================================================
+   Swiper Slide Layout
+   ========================================================================== */
 .swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
 }
 
+/* ==========================================================================
+   Swiper Image Configuration
+   ========================================================================== */
 .swiper-image {
-  width: 48%;
-  height: 50%;
+    width: 48%;
+    height: 50%;
 }
 
 .swiper-image-left {
-  text-align: left;
+    text-align: left;
 }
 
 .swiper-image-right {
-  text-align: right;
+    text-align: right;
 }
 
 .swiper-image-inner {
-  position: relative;
+    position: relative;
 }
 
-.emphasis {
-  font-weight: bold;
-  font-size: 2rem;
-}
-
-/* Additional styling as needed */
 .slider-image {
-  max-width: 25%; /* Adjust percentage as needed */
-  height: auto;
-  display: block;
-
+    max-width: 25%;
+    height: auto;
+    display: block;
 }
 
+/* ==========================================================================
+   Typography Styles
+   ========================================================================== */
+.emphasis {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+/* ==========================================================================
+   Hover Effects and Interactions
+   ========================================================================== */
 .hover-container {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  width: 100%; /* Match your design */
-  height: auto;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
 }
 
 .hover-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: filter 0.3s ease, transform 0.3s ease;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .hover-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 1rem;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 1rem;
-  border-radius: 8px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+/* Hover States */
 .hover-container:hover .hover-image {
-  filter: blur(5px);
-  transform: scale(1.05);
+    filter: blur(5px);
+    transform: scale(1.05);
 }
 
 .hover-container:hover .hover-text {
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
+/* ==========================================================================
+   Section Title Styles
+   ========================================================================== */
 .culture-title {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 5rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 5rem;
 }
 
 .culture-title-bottom {
-  display: block;
-  font-size: 1.5em;
-  font-weight: bold;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
 }

@@ -1,88 +1,154 @@
-// Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // Get all theme toggle buttons
-  const themeToggles = document.querySelectorAll('.theme-toggle');
+/**
+ * Theme Controller Module
+ *
+ * Manages the theme switching functionality including:
+ * - Light/dark theme toggle
+ * - System preference detection
+ * - Theme persistence
+ * - Keyboard accessibility
+ * - Screen reader support
+ */
 
-  // Function to set the theme
-  function setTheme(theme) {
-      // Set the theme attribute on the root element
-      document.documentElement.setAttribute('data-theme', theme);
+document.addEventListener('DOMContentLoaded', () => {
+    // Configuration Constants
+    const CONFIG = {
+        THEMES: {
+            LIGHT: 'light',
+            DARK: 'dark'
+        },
+        STORAGE_KEY: 'preferred-theme',
+        ANNOUNCEMENT_DURATION: 1000
+    };
 
-      // Store the theme preference
-      localStorage.setItem('preferred-theme', theme);
+    // CSS Selectors and Attributes
+    const SELECTORS = {
+        themeToggle: '.theme-toggle',
+        mediaQuery: '(prefers-color-scheme: dark)'
+    };
 
-      // Update all toggle buttons
-      themeToggles.forEach(button => {
-          // Update the button's aria-label for screen readers
-          button.setAttribute('aria-label',
-              theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
-          );
+    const ATTRIBUTES = {
+        theme: 'data-theme',
+        ariaLabel: 'aria-label',
+        ariaPressed: 'aria-pressed',
+        ariaLive: 'aria-live',
+        role: 'role'
+    };
 
-          // Update the emoji
-          button.textContent = theme === 'dark' ? '☀️' : '🌙';
+    // Theme Icons
+    const THEME_ICONS = {
+        [CONFIG.THEMES.LIGHT]: '🌙',  // Moon for light mode (switches to dark)
+        [CONFIG.THEMES.DARK]: '☀️'    // Sun for dark mode (switches to light)
+    };
 
-          // Update the pressed state for accessibility
-          button.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-      });
+    // DOM Elements
+    const elements = {
+        themeToggles: document.querySelectorAll(SELECTORS.themeToggle)
+    };
 
-      // Announce theme change to screen readers
-      announceThemeChange(theme);
-  }
+    /**
+     * Sets the theme and updates UI elements
+     * @param {string} theme - The theme to set ('light' or 'dark')
+     */
+    function setTheme(theme) {
+        // Update document theme
+        document.documentElement.setAttribute(ATTRIBUTES.theme, theme);
 
-  // Function to announce theme changes to screen readers
-  function announceThemeChange(theme) {
-      const announcement = document.createElement('div');
-      announcement.setAttribute('role', 'status');
-      announcement.setAttribute('aria-live', 'polite');
-      announcement.className = 'visually-hidden';
-      announcement.textContent = `Changed to ${theme} theme`;
-      document.body.appendChild(announcement);
+        // Persist theme preference
+        localStorage.setItem(CONFIG.STORAGE_KEY, theme);
 
-      // Remove the announcement after it's been read
-      setTimeout(() => {
-          announcement.remove();
-      }, 1000);
-  }
+        // Update toggle buttons
+        elements.themeToggles.forEach(button => {
+            const isDark = theme === CONFIG.THEMES.DARK;
 
-  // Initialize theme based on stored preference or system preference
-  function initializeTheme() {
-      const storedTheme = localStorage.getItem('preferred-theme');
-      if (storedTheme) {
-          setTheme(storedTheme);
-      } else {
-          // Check system preference
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          setTheme(prefersDark ? 'dark' : 'light');
-      }
-  }
+            // Update button state
+            button.textContent = THEME_ICONS[theme];
+            button.setAttribute(ATTRIBUTES.ariaPressed, isDark.toString());
 
-  // Add click handlers to all theme toggles
-  themeToggles.forEach(button => {
-      button.addEventListener('click', () => {
-          const currentTheme = document.documentElement.getAttribute('data-theme');
-          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-          setTheme(newTheme);
-      });
-  });
+            // Update accessibility label
+            button.setAttribute(
+                ATTRIBUTES.ariaLabel,
+                `Switch to ${isDark ? CONFIG.THEMES.LIGHT : CONFIG.THEMES.DARK} theme`
+            );
+        });
 
-  // Listen for system theme changes
-  const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  systemThemeQuery.addListener((e) => {
-      if (!localStorage.getItem('preferred-theme')) {
-          setTheme(e.matches ? 'dark' : 'light');
-      }
-  });
+        // Announce theme change
+        announceThemeChange(theme);
+    }
 
-  // Initialize the theme when the page loads
-  initializeTheme();
+    /**
+     * Creates and manages a screen reader announcement
+     * @param {string} theme - The current theme
+     */
+    function announceThemeChange(theme) {
+        const announcement = document.createElement('div');
 
-  // Add keyboard support
-  themeToggles.forEach(button => {
-      button.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              button.click();
-          }
-      });
-  });
+        // Set accessibility attributes
+        announcement.setAttribute(ATTRIBUTES.role, 'status');
+        announcement.setAttribute(ATTRIBUTES.ariaLive, 'polite');
+        announcement.className = 'visually-hidden';
+        announcement.textContent = `Changed to ${theme} theme`;
+
+        // Add and remove announcement
+        document.body.appendChild(announcement);
+        setTimeout(() => {
+            announcement.remove();
+        }, CONFIG.ANNOUNCEMENT_DURATION);
+    }
+
+    /**
+     * Initializes theme based on stored preference or system settings
+     */
+    function initializeTheme() {
+        const storedTheme = localStorage.getItem(CONFIG.STORAGE_KEY);
+
+        if (storedTheme) {
+            setTheme(storedTheme);
+        } else {
+            const prefersDark = window.matchMedia(SELECTORS.mediaQuery).matches;
+            setTheme(prefersDark ? CONFIG.THEMES.DARK : CONFIG.THEMES.LIGHT);
+        }
+    }
+
+    /**
+     * Sets up event listeners for theme toggling
+     */
+    function setupEventListeners() {
+        // Click handlers
+        elements.themeToggles.forEach(button => {
+            button.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute(ATTRIBUTES.theme);
+                const newTheme = currentTheme === CONFIG.THEMES.DARK
+                    ? CONFIG.THEMES.LIGHT
+                    : CONFIG.THEMES.DARK;
+                setTheme(newTheme);
+            });
+
+            // Keyboard support
+            button.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    button.click();
+                }
+            });
+        });
+
+        // System theme change handler
+        const systemThemeQuery = window.matchMedia(SELECTORS.mediaQuery);
+        systemThemeQuery.addListener((e) => {
+            if (!localStorage.getItem(CONFIG.STORAGE_KEY)) {
+                setTheme(e.matches ? CONFIG.THEMES.DARK : CONFIG.THEMES.LIGHT);
+            }
+        });
+    }
+
+    /**
+     * Initialize the theme controller
+     */
+    function init() {
+        initializeTheme();
+        setupEventListeners();
+    }
+
+    // Initialize the module
+    init();
 });

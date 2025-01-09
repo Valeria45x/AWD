@@ -1,29 +1,33 @@
-@font-face {
-  font-family: 'Roboto';
-  src: url('/assets/fonts/Roboto/Roboto-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+/* ==========================================================================
+   typography.css - Font Configuration and Text Styles
+   ========================================================================== */
+   @font-face {
+    font-family: 'Roboto';
+    src: url('/assets/fonts/Roboto/Roboto-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('/assets/fonts/Roboto/Roboto-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Roboto';
+    src: url('/assets/fonts/Roboto/Roboto-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 body {
-  font-family: var(--font-family-sans);
-  font-size: var(--text-base);
-  color: var(--text-color);
+    font-family: var(--font-family-sans);
+    font-size: var(--text-base);
+    color: var(--text-color);
 }
 
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
-  font-weight: 700;
-  margin-bottom: var(--spacing-sm);
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
 }
 
 h1 { font-size: var(--text-3xl); }
@@ -33,4 +37,6 @@ h4 { font-size: var(--text-lg); }
 h5 { font-size: var(--text-base); }
 h6 { font-size: var(--text-sm); }
 
-p { margin-bottom: var(--spacing-sm); }
+p {
+    margin-bottom: var(--spacing-sm);
+}

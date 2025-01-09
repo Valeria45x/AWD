@@ -1,90 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the stories, flavors, and spirit of Puerto Rico through an interactive cultural journey">
+     <!-- Basic Meta Tags -->
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="Discover the stories, flavors, and spirit of Puerto Rico through an interactive cultural journey">
+     <meta name="author" content="Your Name">
+     <meta name="keywords" content="Puerto Rico, Culture, History, Travel, Interactive, Journey">
 
-    <!-- Theme Color and PWA Support -->
-    <meta name="theme-color" content="#39e639">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="author" content="Your Name">
-    <meta name="keywords" content="Puerto Rico, Culture, History, Travel, Interactive, Journey">
+     <!-- Theme and PWA Support -->
+     <meta name="theme-color" content="#39e639">
+     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Puerto Rico: A Journey Through Culture and Resilience">
-    <meta property="og:description" content="Discover the stories, flavors, and spirit of Puerto Rico through an interactive cultural journey">
-    <meta property="og:type" content="website">
+     <!-- Open Graph / Social Media -->
+     <meta property="og:title" content="Puerto Rico: A Journey Through Culture and Resilience">
+     <meta property="og:description" content="Discover the stories, flavors, and spirit of Puerto Rico through an interactive cultural journey">
+     <meta property="og:type" content="website">
 
-    <!-- Apple Specific -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="mask-icon" href="assets/favicon/favicon.svg" color="#39e639">
-    <!-- Favicon Configuration -->
-    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/web-app-manifest-192x192.png">
+     <!-- Favicon Configuration -->
+     <link rel="icon" type="image/svg+xml" href="assets/icons/favicons/favicon.svg">
+     <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicons/favicon-96x96.png">
+     <link rel="icon" type="image/x-icon" href="assets/icons/favicons/favicon.ico">
+     <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicons/apple-touch-icon.png">
+     <link rel="mask-icon" href="assets/icons/favicons/favicon.svg" color="#39e639">
 
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="site.webmanifest">
+     <!-- PWA Manifest -->
+     <link rel="manifest" href="manifest.json">
 
-   <!-- Modular CSS Structure -->
-    <link rel="stylesheet" href="css/base/reset.css">
-    <link rel="stylesheet" href="css/base/variables.css">
-    <link rel="stylesheet" href="css/base/typography.css">
-    <link rel="stylesheet" href="css/base/theme.css">
-    <link rel="stylesheet" href="css/components/navbar.css">
-    <link rel="stylesheet" href="css/components/hero.css">
+     <!-- Stylesheets: Base Styles -->
+     <link rel="stylesheet" href="css/base/reset.css">
+     <link rel="stylesheet" href="css/base/variables.css">
+     <link rel="stylesheet" href="css/base/typography.css">
+     <link rel="stylesheet" href="css/base/theme.css">
+
+     <!-- Stylesheets: Components -->
+     <link rel="stylesheet" href="css/components/navbar.css">
+     <link rel="stylesheet" href="css/components/hero.css">
      <link rel="stylesheet" href="css/components/timeline.css">
-    <link rel="stylesheet" href="css/components/culture.css">
-    <link rel="stylesheet" href="css/components/stories.css">
-    <link rel="stylesheet" href="css/components/footer.css">
-    <link rel="stylesheet" href="css/components/404.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css"> <title>Puerto Rico: A Journey Through Culture and Resilience</title>
-<body>
+     <link rel="stylesheet" href="css/components/culture.css">
+     <link rel="stylesheet" href="css/components/stories.css">
+     <link rel="stylesheet" href="css/components/footer.css">
+     <link rel="stylesheet" href="css/components/404.css">
+
+     <!-- Stylesheets: Main -->
+     <link rel="stylesheet" href="css/index.css">
+
+     <!-- External Dependencies -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
+
+     <title>Puerto Rico: A Journey Through Culture and Resilience</title>
+ </head>
+ <body>
+    <!-- Header Section -->
     <header class="main-header">
-        <!-- In your header's navbar -->
+        <!-- Audio Controls -->
+        <div class="audio-controls">
+            <!-- Master Audio Toggle -->
+            <button class="audio-toggle" id="masterToggle" aria-label="Toggle all sounds">
+                <span class="audio-icon">🔊</span>
+            </button>
 
-<div class="audio-controls">
-    <button class="audio-toggle" id="masterToggle" aria-label="Toggle all sounds">
-        <span class="audio-icon">🔊</span>
-    </button>
-    <div class="audio-buttons">
-        <button class="audio-button" id="wavesToggle" aria-label="Toggle ocean waves">
-            <span class="audio-icon">🌊</span>
-        </button>
-        <button class="audio-button" id="coquiToggle" aria-label="Toggle coquí">
-            <span class="audio-icon">🐸</span>
-        </button>
-    </div>
+            <!-- Individual Audio Controls -->
+            <div class="audio-buttons">
+                <button class="audio-button" id="wavesToggle" aria-label="Toggle ocean waves">
+                    <span class="audio-icon">🌊</span>
+                </button>
+                <button class="audio-button" id="coquiToggle" aria-label="Toggle coquí">
+                    <span class="audio-icon">🐸</span>
+                </button>
+            </div>
 
-    <!-- Hidden audio elements -->
-    <audio id="wavesAudio" loop>
-        <source src="https://ik.imagekit.io/Valeria45x/puerto_rico_website/hero/ocean.wav?updatedAt=1736274719469" type="audio/mpeg">
-    </audio>
-    <audio id="coquiAudio" loop>
-        <source src="https://ik.imagekit.io/Valeria45x/puerto_rico_website/hero/coquis.wav?updatedAt=1736274720273" type="audio/mpeg">
-    </audio>
-</div>
+            <!-- Audio Sources -->
+            <audio id="wavesAudio" loop>
+                <source src="https://ik.imagekit.io/Valeria45x/puerto_rico_website/hero/ocean.wav" type="audio/mpeg">
+            </audio>
+            <audio id="coquiAudio" loop>
+                <source src="https://ik.imagekit.io/Valeria45x/puerto_rico_website/hero/coquis.wav" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- Navigation -->
         <nav class="navbar">
-          <div class="container">
-              <a href="#" class="logo">PR Journey</a>
-              <button class="navbar__toggle" aria-label="Toggle navigation menu">
-                  <span class="navbar__toggle-icon"></span>
-              </button>
-              <div class="navbar__menu">
-                  <ul class="navbar__list">
-                      <li><a href="#timeline">Timeline</a></li>
-                      <li><a href="#culture">Culture</a></li>
-                      <li><a href="#stories">Stories</a></li>
-                      <li><button class="theme-toggle" aria-label="Toggle theme"></button></li>
-                  </ul>
-              </div>
-          </div>
-      </nav>
+            <div class="container">
+                <a href="#" class="logo">PR Journey</a>
+                <button class="navbar__toggle" aria-label="Toggle navigation menu">
+                    <span class="navbar__toggle-icon"></span>
+                </button>
+                <div class="navbar__menu">
+                    <ul class="navbar__list">
+                        <li><a href="#timeline">Timeline</a></li>
+                        <li><a href="#culture">Culture</a></li>
+                        <li><a href="#stories">Stories</a></li>
+                        <li><button class="theme-toggle" aria-label="Toggle theme"></button></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
-
+ <!-- Main Content -->
     <main>
         <!-- Hero Section -->
         <section class="hero">
@@ -96,10 +110,11 @@
         </div>
     </div>
 </section>
+<!-- Timeline Section -->
 <section id="timeline" class="timeline">
 
 <div class="container">
-    <!-- Rest of your timeline content -->
+
 </div>
   <div class="container">
     <h2>
@@ -304,7 +319,8 @@
                 <div class="swiper-slide">
                     <div class="swiper-image" data-swiper-parallax-y="-20%">
                         <div class="swiper-image-inner swiper-image-left swiper-image-one">
-                            <h1><span class="emphasis">Heart & Soul</span><br>
+                            <h1><span class="emphasis">Heart &amp; Soul
+                                 </span><br>
                             <span>Mofongo</span></h1>
                             <p>Traditional Cuisine</p>
                         </div>
@@ -445,7 +461,6 @@
 
         <!-- Personal Stories Section -->
         <section id="stories" class="stories">
-            <!-- Background div will be inserted by JavaScript -->
             <div class="container">
                 <div class="title-container">
                     <h1 class="title">Who I Am<br>Reflects&nbsp;Where&nbsp;I&nbsp;Come&nbsp;From</h1>
@@ -456,7 +471,7 @@
             </div>
         </section>
     </main>
-
+<!-- Footer -->
     <footer class="main-footer">
         <div class="container">
             <p class="footer-text">Website created under Creative Commons License. Designed with ❤️ for Puerto Rico.</p>
@@ -475,13 +490,16 @@
 
 
 
- <!-- JavaScript Dependencies -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="js/components/culture.js"></script>
-<script src="js/components/timeline.js"></script>
-<script src="js/components/navbar.js"></script>
-<script src="js/components/theme.js"></script>
-<script src="js/components/stories.js"></script>
-<script src="js/components/audio.js"></script>
+  <!-- JavaScript Dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="js/components/culture.js"></script>
+  <script src="js/components/timeline.js"></script>
+  <script src="js/components/navbar.js"></script>
+  <script src="js/components/theme.js"></script>
+  <script src="js/components/stories.js"></script>
+  <script src="js/components/audio.js"></script>
+</body>
 </html>

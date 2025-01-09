@@ -1,58 +1,51 @@
-/* Reset CSS with body positioning fix */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ==========================================================================
+   reset.css - Modern CSS Reset with Positioning
+   ========================================================================== */
+   *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-  height: 100%;
-  /* Ensure smooth scrolling on iOS devices */
-  -webkit-overflow-scrolling: touch;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    height: 100%;
+    -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
 }
 
 body {
-  /* Essential height properties */
-  min-height: 100%;
-  height: 100%;
+    /* Dimensions and positioning */
+    min-height: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
 
-  /* Remove any default spacing */
-  margin: 0;
-  padding: 0;
+    /* Typography */
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
-  /* Prevent horizontal overflow */
-  overflow-x: hidden;
-
-  /* Ensure content starts from the very top */
-  position: relative;
-
-  /* Text rendering properties */
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Create a new stacking context */
-  isolation: isolate;
+    /* Stacking context */
+    isolation: isolate;
 }
 
-/* Main element styles */
 main {
-  /* Ensure main content starts from the very top */
-  position: relative;
-  margin: 0;
-  padding: 0;
-  /* Create proper stacking context for children */
-  isolation: isolate;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    isolation: isolate;
 }
 
-/* Other reset styles remain the same */
+/* Media elements */
 img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
+    display: block;
+    max-width: 100%;
 }
 
+/* Form elements */
 input, button, textarea, select {
-  font: inherit;
+    font: inherit;
 }

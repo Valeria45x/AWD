@@ -1,134 +1,156 @@
-.stories {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  perspective: 1px;
-  transform-style: preserve-3d;
+/* ==========================================================================
+   stories.css - Stories Section Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Stories Container & Parallax Effect
+   ========================================================================== */
+   .stories {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    perspective: 1px;
+    transform-style: preserve-3d;
 }
 
+/* Background Parallax Layer */
 .stories__background {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background-position: center;
-  transform: translateZ(-1px) scale(2);
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-position: center;
+    transform: translateZ(-1px) scale(2);
 }
 
+/* Overlay Gradient */
 .stories::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.3)
-  );
-  z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.3)
+    );
+    z-index: 1;
 }
 
+/* ==========================================================================
+   Content Container
+   ========================================================================== */
 .stories .container {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  color: var(--pure-white);
-  transform-style: preserve-3d;
-  transform: translateZ(0);
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: var(--pure-white);
+    transform-style: preserve-3d;
+    transform: translateZ(0);
 }
 
+/* Title Section */
 .title-container {
-  width: 100%;
-  margin: 0 auto 2rem;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(30px) translateZ(0.2px);
-  transform-style: preserve-3d;
+    width: 100%;
+    margin: 0 auto 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px) translateZ(0.2px);
+    transform-style: preserve-3d;
 }
 
 .title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 1.2;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-  color: var(--pure-white);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.2;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    color: var(--pure-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Story Content */
 .story-content {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(50px) translateZ(0.1px);
-  transform-style: preserve-3d;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px) translateZ(0.1px);
+    transform-style: preserve-3d;
 }
 
 .story-content p {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  line-height: 1.6;
-  margin: 0;
-  padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  backdrop-filter: blur(4px);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    margin: 0;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
 }
 
-/* Animation classes */
+/* ==========================================================================
+   Animations
+   ========================================================================== */
 .fade-in-up {
-  animation: fadeInUp 1s ease forwards;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .fade-in-up-delay {
-  animation: fadeInUp 1s ease 0.3s forwards;
+    animation: fadeInUp 1s ease 0.3s forwards;
 }
 
 @keyframes fadeInUp {
-  from {
-      opacity: 0;
-      transform: translateY(50px) translateZ(0.2px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0) translateZ(0.2px);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(50px) translateZ(0.2px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) translateZ(0.2px);
+    }
 }
 
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
 @media (max-width: 768px) {
-  .stories {
-      perspective: none;
-      transform-style: flat;
-  }
+    /* Disable parallax on mobile */
+    .stories {
+        perspective: none;
+        transform-style: flat;
+    }
 
-  .stories__background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transform: none;
-  }
+    .stories__background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: none;
+    }
 
-  .title-container,
-  .story-content {
-      transform: translateY(30px);
-  }
+    /* Adjust content transforms */
+    .title-container,
+    .story-content {
+        transform: translateY(30px);
+    }
 
-  .title br {
-      display: none;
-  }
+    /* Typography adjustments */
+    .title br {
+        display: none;
+    }
 
-  .title {
-      word-break: break-word;
-      hyphens: auto;
-  }
+    .title {
+        word-break: break-word;
+        hyphens: auto;
+    }
 }

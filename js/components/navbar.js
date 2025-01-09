@@ -1,81 +1,124 @@
-// Wait for the DOM to be fully loaded before attaching our event listeners
+/**
+ * Navbar Controller Module
+ *
+ * Manages the responsive navigation bar functionality including:
+ * - Mobile menu toggle
+ * - Smooth scroll to sections
+ * - Outside click handling
+ * - Responsive behavior
+ * - Accessibility support
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Get references to our key elements
-  const navbar = document.querySelector('.navbar');
-  const navToggle = document.querySelector('.navbar__toggle');
-  const navMenu = document.querySelector('.navbar__menu');
-  const navLinks = document.querySelectorAll('.navbar__list a');
+    // Configuration Constants
+    const CONFIG = {
+        MOBILE_BREAKPOINT: 768,
+        MENU_TRANSITION_DURATION: 300,
+        RESIZE_DEBOUNCE_DELAY: 250
+    };
 
-  // Function to handle opening and closing the mobile menu
-  function toggleMenu(shouldOpen = null) {
-      // If shouldOpen is provided, use that value; otherwise toggle based on current state
-      const isOpen = shouldOpen !== null ? shouldOpen : !navMenu.classList.contains('active');
+    // CSS Selectors
+    const SELECTORS = {
+        navbar: '.navbar',
+        toggle: '.navbar__toggle',
+        menu: '.navbar__menu',
+        links: '.navbar__list a'
+    };
 
-      // Update classes and attributes for accessibility
-      navToggle.classList.toggle('active', isOpen);
-      navMenu.classList.toggle('active', isOpen);
-      navToggle.setAttribute('aria-expanded', isOpen.toString());
+    // DOM Elements
+    const elements = {
+        navbar: document.querySelector(SELECTORS.navbar),
+        toggle: document.querySelector(SELECTORS.toggle),
+        menu: document.querySelector(SELECTORS.menu),
+        links: document.querySelectorAll(SELECTORS.links)
+    };
 
-      // Prevent body scrolling when menu is open
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-  }
+    /**
+     * Toggles the mobile menu state
+     * @param {boolean|null} shouldOpen - Force menu to open/close state, or toggle if null
+     */
+    function toggleMenu(shouldOpen = null) {
+        const isOpen = shouldOpen !== null ? shouldOpen : !elements.menu.classList.contains('active');
 
-  // Handle hamburger button clicks
-  navToggle?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleMenu();
-  });
+        // Update UI state
+        elements.toggle.classList.toggle('active', isOpen);
+        elements.menu.classList.toggle('active', isOpen);
 
-  // Handle navigation link clicks
-  navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetId = link.getAttribute('href');
+        // Update accessibility
+        elements.toggle.setAttribute('aria-expanded', isOpen.toString());
 
-          // Only proceed if it's a section link
-          if (targetId && targetId !== '#') {
-              const targetSection = document.querySelector(targetId);
+        // Manage body scroll
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
 
-              if (targetSection) {
-                  // First, close the mobile menu
-                  toggleMenu(false);
+    /**
+     * Handles smooth scrolling to target sections
+     * @param {string} targetId - The ID of the target section
+     */
+    function smoothScrollToSection(targetId) {
+        const targetSection = document.querySelector(targetId);
 
-                  // Wait for the menu closing animation
-                  setTimeout(() => {
-                      // Calculate scroll position accounting for navbar height
-                      const navHeight = navbar.offsetHeight;
-                      const targetPosition = targetSection.offsetTop - navHeight;
+        if (targetSection) {
+            // Close mobile menu first
+            toggleMenu(false);
 
-                      // Smooth scroll to the target section
-                      window.scrollTo({
-                          top: targetPosition,
-                          behavior: 'smooth'
-                      });
-                  }, 300); // This timing matches our CSS transition duration
-              }
-          }
-      });
-  });
+            // Wait for menu transition to complete
+            setTimeout(() => {
+                const navHeight = elements.navbar.offsetHeight;
+                const targetPosition = targetSection.offsetTop - navHeight;
 
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-      if (navMenu?.classList.contains('active') &&
-          !navMenu.contains(e.target) &&
-          !navToggle.contains(e.target)) {
-          toggleMenu(false);
-      }
-  });
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }, CONFIG.MENU_TRANSITION_DURATION);
+        }
+    }
 
-  // Handle window resize
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-          // Close mobile menu if window is resized larger than mobile breakpoint
-          if (window.innerWidth > 768 && navMenu?.classList.contains('active')) {
-              toggleMenu(false);
-          }
-      }, 250);
-  });
+    /**
+     * Event Handlers
+     */
+
+    // Toggle button click handler
+    elements.toggle?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    // Navigation links click handler
+    elements.links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+
+            if (targetId && targetId !== '#') {
+                smoothScrollToSection(targetId);
+            }
+        });
+    });
+
+    // Outside click handler
+    document.addEventListener('click', (e) => {
+        const isMenuActive = elements.menu?.classList.contains('active');
+        const isClickOutside = !elements.menu.contains(e.target) &&
+                             !elements.toggle.contains(e.target);
+
+        if (isMenuActive && isClickOutside) {
+            toggleMenu(false);
+        }
+    });
+
+    // Window resize handler with debounce
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const isMobileMenuActive = elements.menu?.classList.contains('active');
+            const isAboveMobileBreakpoint = window.innerWidth > CONFIG.MOBILE_BREAKPOINT;
+
+            if (isMobileMenuActive && isAboveMobileBreakpoint) {
+                toggleMenu(false);
+            }
+        }, CONFIG.RESIZE_DEBOUNCE_DELAY);
+    });
 });
-

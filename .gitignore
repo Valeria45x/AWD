@@ -1,48 +1,58 @@
 # System files
-.DS_Store
-Thumbs.db
-desktop.ini
+# These are operating system-specific files that store folder settings and metadata
+# They should be ignored as they're personal to each user's system
+.DS_Store        # macOS folder settings and metadata
+Thumbs.db        # Windows thumbnail cache
+desktop.ini      # Windows folder configuration file
 
 # Editor directories and files
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# IDE and text editor specific files that contain user preferences and project settings
+.vscode/*                    # VS Code settings directory
+!.vscode/settings.json       # Exception: Share VS Code project settings
+!.vscode/extensions.json     # Exception: Share recommended VS Code extensions
+.idea                       # IntelliJ IDEA/WebStorm settings
+*.suo                       # Visual Studio User Options file
+*.ntvs*                     # Node Tools for Visual Studio files
+*.njsproj                   # Node.js project files for Visual Studio
+*.sln                       # Visual Studio solution files
+*.sw?                       # Vim swap files
 
 # Dependencies
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Package manager directories and debug logs that should be installed fresh by each developer
+node_modules/              # NPM packages directory
+npm-debug.log*            # NPM debug logs
+yarn-debug.log*           # Yarn debug logs
+yarn-error.log*           # Yarn error logs
 
 # Build output
-dist/
-build/
+# Compiled and generated files that should be created during deployment
+dist/                     # Distribution directory
+build/                    # Build output directory
 
 # Environment variables
-.env
-.env.local
-.env.*.local
+# Configuration files containing sensitive information like API keys and credentials
+.env                      # Main environment variables file
+.env.local               # Local environment overrides
+.env.*.local             # Environment-specific local overrides
 
 # Large media files (using imagekit.io instead)
-assets/images/**/*.{png,jpg,jpeg,gif}
-!assets/images/**/*.min.{png,jpg,jpeg,gif}
+# Excluding large media files that are hosted elsewhere
+assets/images/**/*.{png,jpg,jpeg,gif}         # All image files in assets directory
+!assets/images/**/*.min.{png,jpg,jpeg,gif}    # Exception: Include minimized images
 
 # Temporary files
-*.log
-*.tmp
-*.temp
-.cache/
+# Various temporary files created during development
+*.log                    # Log files
+*.tmp                    # Temporary files
+*.temp                   # Another temporary file extension
+.cache/                  # Cache directory
 
 # Local development files
-*.local
+# Files specific to local development environment
+*.local                  # Any file with .local extension
 
 # Optional: backup files
-*.bak
-*.backup
-*~
+# Various types of backup files that shouldn't be in version control
+*.bak                    # Backup files
+*.backup                 # Another backup extension
+*~                       # Backup files created by some editors
