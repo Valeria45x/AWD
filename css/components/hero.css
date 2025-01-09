@@ -1,16 +1,44 @@
-/* Hero section styles */
 .hero {
   position: relative;
   min-height: 100vh;
   margin-top: -51px;
   padding-top: 72px;
-  background-image: url('https://ik.imagekit.io/Valeria45x/puerto_rico_website/hero/playa-hero.jpg?updatedAt=1736273545893');
-  background-size: cover;
-  background-position: center;
   color: var(--pure-white);
   z-index: 1;
   display: flex;
   align-items: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://ik.imagekit.io/Valeria45x/puerto_rico_website/hero/playa-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Add a subtle overlay for better text readability */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.2)
+  );
+  z-index: -1;
 }
 
 .hero .container {
@@ -22,36 +50,24 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  position: relative;
 }
 
 .hero__content {
   text-align: center;
   padding: 1rem;
+  backdrop-filter: blur(2px);
+  border-radius: 8px;
 }
 
-/* Main heading remains prominent */
 .hero h1 {
   font-size: var(--text-3xl);
-  margin-bottom: 1rem; /* Slightly reduced margin */
+  margin-bottom: 1rem;
   line-height: 1.2;
-  text-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   max-width: 800px;
 }
 
-/* Adjusted paragraph size and spacing */
-.hero p {
-  font-size: var(--text-md);
-  margin-bottom: 2rem;
-  line-height: 1.6; /* Slightly increased for better readability */
-  text-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.3);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  /* Add slight transparency to further differentiate from heading */
-  opacity: 0.9;
-}
-
-/* Enhanced button styling with increased specificity */
 .hero .cta-button {
   display: inline-flex;
   align-items: center;
@@ -68,40 +84,37 @@
   letter-spacing: 0.5px;
   text-decoration: none;
   text-align: center;
-  box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Hover state */
 .hero .cta-button:hover {
   background-color: transparent;
-  border-color: var(--primary-color);
+  border-color: var(--pure-white);
   color: var(--pure-white);
   transform: translateY(-2px);
-  box-shadow: 0 6px 8px hsla(0, 0%, 0%, 0.2);
-  text-decoration: none !important;
-}
-
-/* Active state for better interaction feedback */
-.hero .cta-button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.1);
-}
-
-/* Focus state for accessibility */
-.hero .cta-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px hsla(120, 75%, 58%, 0.4);
-  text-decoration: none !important;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .hero {
+      margin-top: -45px; /* Adjust based on mobile navbar height */
+  }
+
   .hero h1 {
       font-size: var(--text-2xl);
   }
 
-  .hero p {
-      font-size: var(--text-base);
+  .hero__content {
+      padding: 0.5rem;
+  }
+}
+
+/* Preload image for better performance */
+@media (min-width: 768px) {
+  .hero::before {
+      background-image: url('https://ik.imagekit.io/Valeria45x/puerto_rico_website/hero/playa-hero.jpg?tr=w-1200,q-80');
   }
 }
