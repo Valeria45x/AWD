@@ -4,6 +4,7 @@
   min-height: 100vh;
   margin-top: -51px;
   padding-top: 72px;
+  background-image: url('https://ik.imagekit.io/Valeria45x/puerto_rico_website/hero/playa-hero.jpg?updatedAt=1736273545893');
   background-size: cover;
   background-position: center;
   color: var(--pure-white);
@@ -39,7 +40,6 @@
 
 /* Adjusted paragraph size and spacing */
 .hero p {
-  /* Changed from text-xl to text-lg for better proportion */
   font-size: var(--text-md);
   margin-bottom: 2rem;
   line-height: 1.6; /* Slightly increased for better readability */
@@ -50,53 +50,35 @@
   /* Add slight transparency to further differentiate from heading */
   opacity: 0.9;
 }
+
 /* Enhanced button styling with increased specificity */
 .hero .cta-button {
-  /* Display and positioning */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  /* Sizing and spacing */
   padding: 1rem 2.5rem;
   min-width: 160px;
   height: 48px;
-
-  /* Colors and background */
   background-color: var(--primary-color);
   color: var(--pure-white);
-
-  /* Border and shape */
   border: 2px solid var(--primary-color);
   border-radius: 4px;
-
-  /* Typography */
   font-weight: 700;
   font-size: var(--text-base);
   letter-spacing: 0.5px;
   text-decoration: none;
   text-align: center;
-
-
-  /* Visual effects */
   box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.1);
-
-  /* Smooth transitions */
   transition: all 0.3s ease;
 }
 
 /* Hover state */
 .hero .cta-button:hover {
-  /* Colors */
   background-color: transparent;
   border-color: var(--primary-color);
   color: var(--pure-white);
-
-  /* Effects */
   transform: translateY(-2px);
   box-shadow: 0 6px 8px hsla(0, 0%, 0%, 0.2);
-
-  /* Ensure no text decoration appears */
   text-decoration: none !important;
 }
 
@@ -120,9 +102,6 @@
   }
 
   .hero p {
-      /* Adjust mobile size proportionally */
       font-size: var(--text-base);
   }
 }
-
-
