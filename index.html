@@ -45,6 +45,28 @@
 <body>
     <header class="main-header">
         <!-- In your header's navbar -->
+
+<div class="audio-controls">
+    <button class="audio-toggle" id="masterToggle" aria-label="Toggle all sounds">
+        <span class="audio-icon">🔊</span>
+    </button>
+    <div class="audio-buttons">
+        <button class="audio-button" id="wavesToggle" aria-label="Toggle ocean waves">
+            <span class="audio-icon">🌊</span>
+        </button>
+        <button class="audio-button" id="coquiToggle" aria-label="Toggle coquí">
+            <span class="audio-icon">🐸</span>
+        </button>
+    </div>
+
+    <!-- Hidden audio elements -->
+    <audio id="wavesAudio" loop>
+        <source src="https://ik.imagekit.io/Valeria45x/puerto_rico_website/hero/ocean.wav?updatedAt=1736274719469" type="audio/mpeg">
+    </audio>
+    <audio id="coquiAudio" loop>
+        <source src="https://ik.imagekit.io/Valeria45x/puerto_rico_website/hero/coquis.wav?updatedAt=1736274720273" type="audio/mpeg">
+    </audio>
+</div>
         <nav class="navbar">
           <div class="container">
               <a href="#" class="logo">PR Journey</a>
@@ -461,5 +483,5 @@
 <script src="js/components/navbar.js"></script>
 <script src="js/components/theme.js"></script>
 <script src="js/components/stories.js"></script>
-
+<script src="js/components/audio.js"></script>
 </html>
