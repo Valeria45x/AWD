@@ -9,7 +9,7 @@ Welcome to the **Advanced Web Design Project**! This project is a responsive, mo
 - **Fixed Navigation Bar**: A fixed top navigation bar for consistent access to the main menu.
 - **Hamburger Menu**: A mobile-friendly hamburger menu for better navigation on small screens.
 - **Responsive Layout**: Optimized for all screen sizes, ensuring a smooth experience across devices.
-  
+
 ## Technology Stack
 - **HTML5**
 - **CSS3 (Modular, Media Queries)**
@@ -20,3 +20,33 @@ This project highlights the use of responsive web design principles, accessibili
 ## Website
 
 Visit the live version of this project: (https://valeria45x.github.io/AWD/)
+
+## Image Attributions
+
+Mofongo de chicharrón de cerdo
+Source: Wikimedia Commons
+License: Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+
+
+
+Bomba Dance in Guaynabo, Puerto Rico
+Source: Wikimedia Commons
+License: Creative Commons Attribution 2.0 Generic (CC BY 2.0)
+
+
+
+Vejigante en el Museo de Arte de Puerto Rico
+Source: Wikimedia Commons
+License: Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+
+
+
+El Yunque N.F. 07
+Source: Wikimedia Commons
+License: Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+
+
+Coqui Frog Puerto Rico
+Source: Wikimedia Commons
+License: Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+
